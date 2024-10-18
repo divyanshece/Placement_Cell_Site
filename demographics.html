@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSET - Demographics</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Fix chart overflow and distortion */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto bg-white" data-aos="fade-down" data-aos-duration="1000">
+        <div class="flex flex-wrap items-center">
+            <div class="w-full sm:w-2/12">
+                <div class="logo">
+                    <a href="#">
+                        <img src="./images/ggu_logo.png" alt="logo" class="mx-auto w-24 h-auto">
+                    </a>
+                </div>
+            </div>
+            <div class="w-full sm:w-8/12 text-center" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="text-teal-800">
+                    <p class="font-bold text-xl text-teal-800">गुरु घासीदास विश्‍वविद्यालय, बिलासपुर</p>
+                    <p class="font-bold text-xl">Guru Ghasidas Vishwavidyalaya, Bilaspur</p>
+                    <small class="block text-sm">A Central University established by the Central Universities Act 2009
+                        No. 25 of
+                        2009</small>
+                </div>
+            </div>
+            <div class="w-full sm:w-2/12" data-aos="fade-left" data-aos-duration="1000">
+                <div class="mx-auto">
+                    <img src="./images/guru_ghasidas.png" alt="image" class="mx-auto w-24 h-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header
+        class="flex justify-between items-center bg-blue-500 shadow-md sticky top-0 left-0 z-40 backdrop-blur-md h-16 w-full px-4 lg:px-8">
+        <a href="./index.html" class="flex gap-2">
+            <div class="text-2xl font-bold w-72 h-full flex items-center text-white">T&P Cell - SOSET</div>
+        </a>
+        <div class="flex gap-6 md:gap-10">
+            <div class="flex lg:hidden items-center">
+                <button id="menu-toggle" class="text-white outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav id="nav-links"
+            class="flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:space-x-12 transition-all transform duration-500 ease-in-out">
+            <a href="./index.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
+                <i class="fas fa-home mr-2 group-hover:text-gray-200"></i> Home
+            </a>
+            <a href="#why-recruit" class="py-4 flex items-center text-white hover:text-gray-200 group">
+                <i class="fas fa-question-circle mr-2 group-hover:text-gray-200"></i> Why Recruit?
+            </a>
+            <a href="#for-recruiters" class="py-4 flex items-center text-white hover:text-gray-200 group">
+                <i class="fas fa-briefcase mr-2 group-hover:text-gray-200"></i> For Recruiters
+            </a>
+            <a href="./team.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
+                <i class="fas fa-users mr-2 group-hover:text-gray-200"></i> Student Team
+            </a>
+            <a href="#contact-us" class="py-4 flex items-center text-white hover:text-gray-200 group">
+                <i class="fas fa-envelope mr-2 group-hover:text-gray-200"></i> Contact Us
+            </a>
+        </nav>
+
+    </header>
+
+    <div class="flex">
+        <!-- Aside: Sticky Navigation -->
+        <aside class="bg-gray-800 w-1/4 sticky top-16 p-6 h-screen overflow-y-auto">
+            <nav class="flex flex-col space-y-4">
+                <a href="#overview" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center"
+                    aria-label="Overview">
+                    <i class="fas fa-chart-pie mr-2"></i>Overview</a>
+                <a href="#gender-distribution" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center"
+                    aria-label="Gender Distribution">
+                    <i class="fas fa-venus-mars mr-2"></i>Gender Distribution</a>
+                <a href="#placement-stats" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center"
+                    aria-label="Placement Stats">
+                    <i class="fas fa-briefcase mr-2"></i>Placement Stats</a>
+                <a href="#branch-distribution" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center"
+                    aria-label="Branch Distribution">
+                    <i class="fas fa-sitemap mr-2"></i>Branch Distribution</a>
+                <a href="#admission-trend" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center"
+                    aria-label="Year-Wise Admissions">
+                    <i class="fas fa-chart-line mr-2"></i>Year-Wise Admissions</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="w-3/4 p-6 space-y-12">
+            <!-- Charts Section -->
+            <div id="overview" class="space-y-8">
+                <!-- Gender Distribution and Placement Stats Side by Side -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-4 shadow-lg rounded-lg chart-container">
+                        <h3 class="text-lg font-semibold text-teal-800 mb-2">Gender Distribution</h3>
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div class="bg-white p-4 shadow-lg rounded-lg chart-container">
+                        <h3 class="text-lg font-semibold text-teal-800 mb-2">Placement Stats</h3>
+                        <canvas id="placementChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Branch Distribution and Year-Wise Admissions Side by Side -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-white p-4 shadow-lg rounded-lg chart-container">
+                        <h3 class="text-lg font-semibold text-teal-800 mb-2">Branch Distribution</h3>
+                        <canvas id="branchChart"></canvas>
+                    </div>
+                    <div class="bg-white p-4 shadow-lg rounded-lg chart-container">
+                        <h3 class="text-lg font-semibold text-teal-800 mb-2">Year-Wise Admissions</h3>
+                        <canvas id="admissionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/demographics.js"></script>
+</body>
+
+</html>

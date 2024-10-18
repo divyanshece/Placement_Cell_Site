@@ -43,7 +43,7 @@ function renderCards(data) {
 // Filter Data by Search
 function filterData() {
     const searchText = searchInput.value.toLowerCase();
-    filteredData = studentsData.filter(student => 
+    filteredData = studentsData.filter(student =>
         student.name.toLowerCase().includes(searchText) ||
         student.designation.toLowerCase().includes(searchText) ||
         student.branch.toLowerCase().includes(searchText)
@@ -108,8 +108,11 @@ document.getElementById('next-page').addEventListener('click', () => {
     }
 });
 
-// Toggle Mobile Menu
-document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-});
 
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('max-h-[1000px]');
+    console.log("clicked");
+});

@@ -45,6 +45,10 @@
     user-select: text;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .marquee {
     animation: marquee 10s linear infinite;
 }
@@ -59,7 +63,7 @@
     }
 }
 
-
+/* 
 @keyframes scrollLeft {
     to {
         left: -200px;
@@ -105,4 +109,4 @@
 
 .item12 {
     animation-delay: calc(16s / 4 * (4 - 4) * -1);
-}
+} */
