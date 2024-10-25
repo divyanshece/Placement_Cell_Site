@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-gray-50">
 
   <div class="container mx-auto bg-white" data-aos="fade-down" data-aos-duration="1000">
     <div class="flex flex-wrap items-center">
@@ -26,7 +26,8 @@
         <div class="text-teal-800">
           <p class="font-bold text-xl">गुरु घासीदास विश्‍वविद्यालय, बिलासपुर</p>
           <p class="font-bold text-xl">Guru Ghasidas Vishwavidyalaya, Bilaspur</p>
-          <small class="block text-sm">A Central University established by the Central Universities Act 2009 No. 25 of
+          <small class="block text-sm">A Central University established by the Central Universities Act 2009
+            No. 25 of
             2009</small>
         </div>
       </div>
@@ -40,24 +41,31 @@
 
   <header
     class="flex justify-between items-center bg-blue-500 shadow-md sticky top-0 left-0 z-40 backdrop-blur-md h-16 w-full px-4 lg:px-8">
+
+    <!-- Logo -->
     <a href="./index.html" class="flex gap-2">
       <div class="text-2xl font-bold w-72 h-full flex items-center text-white">T&P Cell - SOSET</div>
     </a>
+
     <div class="flex gap-6 md:gap-10">
+      <!-- Hamburger Menu for Mobile -->
       <div class="flex lg:hidden items-center">
-        <button id="menu-toggle" class="text-white outline-none">
+        <button id="menu-toggle" class="text-gray-200 focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+            </path>
           </svg>
         </button>
       </div>
     </div>
+
+    <!-- Navigation Links -->
     <nav id="nav-links"
-      class="flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:space-x-12 transition-all transform duration-500 ease-in-out">
+      class="flex flex-col items-center max-h-0 lg:max-h-full lg:flex lg:flex-row lg:items-center lg:space-x-4 lg:h-full absolute top-16 left-0 w-full bg-gray-800 bg-opacity-95 lg:bg-opacity-90 shadow-md lg:relative lg:bg-transparent lg:shadow-none lg:top-0 lg:w-auto lg:translate-x-0 transition-all transform duration-500 ease-in-out overflow-hidden xl:overflow-visible">
       <a href="./index.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
         <i class="fas fa-home mr-2 group-hover:text-gray-200"></i> Home
       </a>
-      <a href="#why-recruit" class="py-4 flex items-center text-white hover:text-gray-200 group">
+      <a href="./index.html#why-recruit" class="py-4 flex items-center text-white hover:text-gray-200 group">
         <i class="fas fa-question-circle mr-2 group-hover:text-gray-200"></i> Why Recruit?
       </a>
       <a href="#for-recruiters" class="py-4 flex items-center text-white hover:text-gray-200 group">
@@ -66,14 +74,13 @@
       <a href="./team.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
         <i class="fas fa-users mr-2 group-hover:text-gray-200"></i> Student Team
       </a>
-      <a href="#contact-us" class="py-4 flex items-center text-white hover:text-gray-200 group">
+      <a href="./contact.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
         <i class="fas fa-envelope mr-2 group-hover:text-gray-200"></i> Contact Us
       </a>
     </nav>
-
   </header>
 
-  <section class="relative overflow-hidden h-1/2" data-aos="zoom-in-up" data-aos-duration="1500">
+  <section class="relative overflow-hidden h-[300px]" data-aos="zoom-in-up" data-aos-duration="1500">
     <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
       <source src="./hero.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
@@ -88,9 +95,9 @@
       </p>
       <div class="mt-6">
         <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded-md" data-aos="fade-up"
-          data-aos-duration="1000">Notification App</a>
+          data-aos-duration="1000">Recruiter Login</a>
         <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded-md ml-4" data-aos="fade-up"
-          data-aos-duration="1200">iOS App</a>
+          data-aos-duration="1200">Student Login</a>
       </div>
     </div>
   </section>
@@ -179,8 +186,164 @@
     </div>
   </section>
 
+  <!-- Message Section -->
+  <section class="relative flex w-full h-[500px] max-w-6xl mx-auto p-2 space-x-2 border-2">
+    <!-- First Div -->
+    <div class="relative flex-1 h-full transition-all hover:flex-[2] group overflow-hidden">
+      <img src="./images/vc.png" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+
+      <!-- Circular Div in Center of Third Div -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
+        <img src="./images/vc.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <div
+        class="absolute left-4 bottom-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
+        <img src="./images/vc.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Message Overlay for Third Div -->
+      <div
+        class="absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-100 group-hover:opacity-0">
+        <i class="fas fa-quote-left text-2xl mb-2"></i>
+        <p class="text-lg font-semibold">Prof. A. K. Chakrawal,<br>Vice Chancellor, GGV</p>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-24 bottom-4 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
+        <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
+          <p class="text-sm font-semibold">Prof. A. K. Chakrawal</p>
+          <p class="text-sm font-semibold">Vice Chancellor, GGV</p>
+        </div>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank" class="pl-4">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-1/2 top-16 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
+        <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">Guru Ghasidas Vishwavidyalaya is
+          the Central University of Chhattisgarh which bears the principal charge of providing job-oriented education,
+          taking care of the educational aspirations, propagation of quality education, and enlightenment of the people
+          of local society and remote areas.
+          <br />
+          We shall comprehensively make efforts to grow this University, named after the great saint Baba Guru
+          Ghasidasji, like a banyan tree of higher learning at the national and international level.
+        </p>
+      </div>
+    </div>
+
+    <!-- Second Div -->
+    <div class="relative flex-1 h-full transition-all hover:flex-[2] group overflow-hidden">
+      <img src="./images/dean.png" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+
+      <!-- Circular Div in Center of Third Div -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
+        <img src="./images/dean.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <div
+        class="absolute left-4 bottom-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
+        <img src="./images/dean.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Message Overlay for Third Div -->
+      <div
+        class="absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-100 group-hover:opacity-0">
+        <i class="fas fa-quote-left text-2xl mb-2"></i>
+        <p class="text-lg font-semibold">Prof. S. C. Srivastava,<br>Dean, SOSET, GGV</p>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-24 bottom-4 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
+        <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
+          <p class="text-sm font-semibold">Prof. S. C. Srivastava</p>
+          <p class="text-sm font-semibold">Dean, SOSET, GGV</p>
+        </div>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank" class="pl-4">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-1/2 top-16 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
+        <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">The students of B.Tech, School
+          of Studies in Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur are ready to build their
+          encroach upon the professional arena. With uncompromising academic percentages, many bright students from GGV
+          are nurtured as thoughtful techies because of their enthusiasm for the practical applicability of technology,
+          especially computing.
+          <br />
+          If required, they are eager to do things abundant beyond. I am delighted to present this vibrant batch of
+          students to our honoured recruiters. I trust that they will prove they are capable and acceptable for your
+          industry. I'm desperate to welcome you to our campus and have a protracted and mutually propitious bond with
+          you. I firmly believe that the synergy of organizations will work wonders.
+        </p>
+      </div>
+    </div>
+
+    <!-- Third Div -->
+    <div class="relative flex-1 h-full transition-all hover:flex-[2] group overflow-hidden">
+      <img src="./images/pc.png" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+
+      <!-- Circular Div in Center of Third Div -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
+        <img src="./images/pc.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <div
+        class="absolute left-4 bottom-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
+        <img src="./images/pc.png" alt="Circular Image" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Message Overlay for Third Div -->
+      <div
+        class="absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-100 group-hover:opacity-0">
+        <i class="fas fa-quote-left text-2xl mb-2"></i>
+        <p class="text-lg font-semibold">Prof. A. K. Kushwaha,<br>TPO, SOSET, GGV</p>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-24 bottom-4 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
+        <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
+          <p class="text-sm font-semibold">Prof. A. K. Kushwaha</p>
+          <p class="text-sm font-semibold">TPO, SOSET, GGV</p>
+        </div>
+        <a href="https://www.linkedin.com/in/alok-kumar-singh-kushwaha" target="_blank" class="pl-4">
+          <i class="fab fa-linkedin text-xl mt-2"></i>
+        </a>
+      </div>
+      <div
+        class="absolute left-1/2 top-16 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
+        <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">I extend a cordial invitation
+          for the
+          placement program at the School of Studies in Engineering & Technology, GGV.
+          We offer recruiters access to a unique bouquet of budding technical minds. Our students constitute the top
+          performers in JEE Mains and a re selected after one of the most rigorous admission processes across the
+          Country.
+          <br />
+          The breadth of talent available here is unparalleled across India, making it the campus-of-Choice for its
+          recruiters. The outstanding faculty, brilliant students, and unique course structure create a perfect
+          environment for developing future technical leaders. I assure you that your expectations will not just be met
+          but will be surpassed substantially. GGV has been known for giving future leaders to the industry in India
+          also abroad.
+        </p>
+      </div>
+    </div>
+  </section>
 
 
+
+  <!-- Why Recruit Section -->
   <section class="w-full h-auto px-10 py-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-7xl mx-auto">
       <!-- Left Side -->
@@ -335,7 +498,6 @@
 
 
 
-
   <!-- Past Recruiters Section -->
   <section class="bg-gray-100 py-20" data-aos="fade-up">
     <div class="container mx-auto">
@@ -396,20 +558,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="py-20" data-aos="fade-up">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
-      <p class="text-lg text-gray-700">
-        For any queries related to placements and internships, feel free to
-        reach us at:
-      </p>
-      <p class="text-xl font-semibold text-gray-800 mt-4">
-        placement@ggv.ac.in | 0123-456789
-      </p>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="pt-8 px-10 bg-gray-50 h-auto w-full">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -417,7 +565,7 @@
       <div
         class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 py-8 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
         <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
-          <a href="https://bhujal.tech/" class="flex justify-center lg:justify-start font-semibold">
+          <a href="#" class="flex justify-center lg:justify-start font-semibold">
             T&P Cell - SOSET
           </a>
           <p class="pt-4 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">
@@ -434,7 +582,7 @@
             <!-- Google Map iframe -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.824239938428!2d82.13698395531655!3d22.128700073435443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a280befca3a0d2f%3A0x580096dff518fe20!2sGuru%20Ghasidas%20Vishwavidyalaya%2C%20Bilaspur!5e1!3m2!1sen!2sin!4v1729199601376!5m2!1sen!2sin"
-              width="300" height="85" class="border-0" allowfullscreen="" loading="lazy"
+              width="400" height="85" class="border-0" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             <!-- Gray overlay -->
