@@ -9,3 +9,4 @@ menuToggle.addEventListener('click', () => {
 AOS.init({
     duration: 1000,
 });
+

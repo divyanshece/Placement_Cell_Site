@@ -1,113 +1,189 @@
-// Year-Wise Admissions Chart (Yearly Placement)
-var admissionCtx = document.getElementById('admissionChart').getContext('2d');
-var admissionChart = new Chart(admissionCtx, {
-    type: 'line',
-    data: {
-        labels: ['2019', '2020', '2021', '2022', '2023'],
-        datasets: [{
-            // label: 'Admissions',
-            data: [150, 160, 170, 180, 190],
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 2,
-            fill: true
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            y: {
-                beginAtZero: true,
-                title: {
-                    display: true,
-                    text: 'Number of Students',
-                    color: '#666',
-                    font: {
-                        size: 14,
-                        weight: 'bold'
+// Fetch and parse the JSON data
+fetch('data/demographics.json')
+    .then(response => response.json())
+    .then(data => {
+        initializeCharts(data); // Pass the data to initialize charts
+        initializeEmployers(data); // Pass the data to initialize employers
+    })
+    .catch(error => console.error('Error fetching demographics data:', error));
+
+
+
+    
+var branchChart;
+var branchLabels;
+var branchDistributionData;
+
+// Initialize charts with fetched JSON data
+function initializeCharts(data) {
+    // Year-Wise Admissions Chart (Yearly Placement)
+    const yearlyLabels = Object.keys(data.yearlyPlacements);
+    const yearlyData = Object.values(data.yearlyPlacements);
+
+    var admissionCtx = document.getElementById('admissionChart').getContext('2d');
+    var admissionChart = new Chart(admissionCtx, {
+        type: 'line',
+        data: {
+            labels: yearlyLabels,
+            datasets: [{
+                data: yearlyData,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Students',
+                        color: '#666',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: '#666',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
                     }
                 }
             },
-            x: {
-                title: {
-                    display: true,
-                    text: 'Year',
-                    color: '#666',
-                    font: {
-                        size: 14,
-                        weight: 'bold'
-                    }
+            plugins: {
+                legend: {
+                    position: false
                 }
             }
-        },
-        plugins: {
-            legend: {
-                position: false
-            }
         }
-    }
-});
+    });
 
-// Placement Stats Chart
-var placementCtx = document.getElementById('placementChart').getContext('2d');
-var placementChart = new Chart(placementCtx, {
-    type: 'bar',
-    data: {
-        labels: ['CSE', 'IT', 'ECE', 'Mech.', 'Civil', 'Chem.', 'IPE', 'EEE'],
-        datasets: [{
-            // label: 'Placements (%)',
-            data: [75, 65, 80, 70, 60, 50, 55, 45],
-            backgroundColor: '#1abc9c',
-            borderColor: '#16a085',
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            y: {
-                beginAtZero: true,
-                max: 100,
-                title: {
-                    display: true,
-                    text: 'Placement Percentage',
-                    color: '#666',
-                    font: {
-                        size: 14,
-                        weight: 'bold'
+
+
+    // Placement Stats Chart
+    branchLabels = Object.keys(data.placedPerBranch);
+    const placementData = Object.values(data.placedPerBranch);
+
+    var placementCtx = document.getElementById('placementChart').getContext('2d');
+    var placementChart = new Chart(placementCtx, {
+        type: 'bar',
+        data: {
+            labels: branchLabels,
+            datasets: [{
+                data: placementData,
+                backgroundColor: '#1abc9c',
+                borderColor: '#16a085',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 200,
+                    title: {
+                        display: true,
+                        text: 'Placement Percentage',
+                        color: '#666',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Departments',
+                        color: '#666',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
                     }
                 }
             },
-            x: {
-                title: {
-                    display: true,
-                    text: 'Departments',
-                    color: '#666',
-                    font: {
-                        size: 14,
-                        weight: 'bold'
-                    }
+            plugins: {
+                legend: {
+                    position: false
                 }
             }
+        }
+    });
+
+
+
+    // Initialize the Branch Distribution Chart
+    branchDistributionData = Object.values(data.branches);
+
+    var branchCtx = document.getElementById('branchChart').getContext('2d');
+    branchChart = new Chart(branchCtx, {
+        type: 'pie',
+        data: {
+            labels: branchLabels,
+            datasets: [{
+                data: branchDistributionData,
+                backgroundColor: ['#2ecc71', '#e67e22', '#9b59b6', '#f1c40f', '#3498db', '#34495e', '#e74c3c', '#95a5a6']
+            }]
         },
-        plugins: {
-            legend: {
-                position: false
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    top: 20,
+                    bottom: 20
+                }
+            },
+            plugins: {
+                legend: {
+                    display: window.innerWidth <= 768, // Display legend only on mobile screens (<= 768px)
+                    position: 'bottom'
+                }
+            },
+            onClick: (evt, item) => {
+                if (isBranchDistribution && item.length > 0) {
+                    const branchIndex = item[0].index;
+                    const branchName = branchChart.data.labels[branchIndex];
+                    selectedBranchName = branchName;
+                    selectedBranchIndex = branchIndex;
+                    updateGenderDistribution(branchName, data);
+                }
+            },
+            onResize: function (chart, size) {
+                chart.canvas.parentNode.style.height = '400px';
             }
         }
-    }
-});
+    });
+
+    // Listen for window resize events to adjust legend display based on screen width
+    window.addEventListener('resize', () => {
+        branchChart.options.plugins.legend.display = window.innerWidth <= 768;
+        branchChart.update();
+    });
+}
 
 
 
 
 
-// Global Variables
-let isBranchDistribution = true;
-let selectedBranchName = '';
-let selectedBranchIndex = -1;
+// Function to update the Branch Distribution chart
+var isBranchDistribution = true;
+var selectedBranchName = '';
+var selectedBranchIndex = -1;
 
 // Custom Plugin to draw lines and labels for Branch and Gender Distribution
 const labelPlugin = {
@@ -164,67 +240,10 @@ const labelPlugin = {
 // Register the custom plugin
 Chart.register(labelPlugin);
 
-// Initialize the Branch Distribution Chart
-var branchCtx = document.getElementById('branchChart').getContext('2d');
-var branchChart = new Chart(branchCtx, {
-    type: 'pie',
-    data: {
-        labels: ['CSE', 'IT', 'ECE', 'Mech.', 'Civil', 'Chem.', 'IPE', 'EEE'],
-        datasets: [{
-            data: [30, 25, 20, 15, 10, 12, 19, 11],
-            backgroundColor: ['#2ecc71', '#e67e22', '#9b59b6', '#f1c40f', '#3498db', '#34495e', '#e74c3c', '#95a5a6']
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-            padding: {
-                top: 20,
-                bottom: 20
-            }
-        },
-        plugins: {
-            legend: {
-                display: window.innerWidth <= 768, // Display legend only on mobile screens (<= 768px)
-                position: 'bottom'
-            }
-        },
-        onClick: (evt, item) => {
-            if (isBranchDistribution && item.length > 0) {
-                const branchIndex = item[0].index;
-                const branchName = branchChart.data.labels[branchIndex];
-                selectedBranchName = branchName;
-                selectedBranchIndex = branchIndex;
-                updateGenderDistribution(branchName);
-            }
-        },
-        onResize: function (chart, size) {
-            chart.canvas.parentNode.style.height = '400px';
-        }
-    }
-});
-
-// Listen for window resize events to adjust legend display based on screen width
-window.addEventListener('resize', () => {
-    branchChart.options.plugins.legend.display = window.innerWidth <= 768;
-    branchChart.update();
-});
-
 // Function to update Gender Distribution based on the selected branch
-function updateGenderDistribution(branchName) {
-    const genderData = {
-        'CSE': [65, 35],
-        'IT': [60, 40],
-        'ECE': [70, 30],
-        'Mech.': [85, 15],
-        'Civil': [75, 25],
-        'Chem.': [50, 50],
-        'IPE': [55, 45],
-        'EEE': [60, 40]
-    };
-
-    const selectedGenderData = genderData[branchName];
+function updateGenderDistribution(branchName, data) {
+    const selectedGenderData = data.genderData[branchName];
+    console.log(selectedGenderData);
 
     // Update the chart with gender data
     branchChart.data.labels = ['Male', 'Female'];
@@ -245,10 +264,10 @@ function updateGenderDistribution(branchName) {
 }
 
 // Function to restore the Branch Distribution chart
-function showBranchChart() {
+function resetBranchChart() {
     // Restore the original branch data
-    branchChart.data.labels = ['CSE', 'IT', 'ECE', 'Mech.', 'Civil', 'Chem.', 'IPE', 'EEE'];
-    branchChart.data.datasets[0].data = [30, 25, 20, 15, 10, 12, 19, 11];
+    branchChart.data.labels = branchLabels;
+    branchChart.data.datasets[0].data = branchDistributionData;
     branchChart.data.datasets[0].backgroundColor = ['#2ecc71', '#e67e22', '#9b59b6', '#f1c40f', '#3498db', '#34495e', '#e74c3c', '#95a5a6'];
 
     // Update the title
@@ -272,96 +291,54 @@ function showBranchChart() {
 
 
 
+// Function to initialize the Employers list
+function initializeEmployers(data) {
+    const employers = data.employers;
+    const alphabetButtonsContainer = document.getElementById('alphabetButtonsContainer');
+    const employerLetterTitle = document.getElementById('employerLetterTitle');
+    const employersList = document.getElementById('employersList');
+    let activeButton = null;
 
-// Sample employers data categorized by alphabet letter
-const employers = {
-    A: ['Amazon', 'Adobe', 'Accenture', 'Apple', 'Airbnb'],
-    B: ['Boeing', 'Bosch', 'Bain & Company', 'BMW', 'BlackRock'],
-    C: ['Cisco', 'Cognizant', 'Capgemini', 'Citibank', 'Chevron'],
-    D: ['Deloitte', 'Dropbox', 'Dell', 'Disney', 'Dow Chemical'],
-    E: ['eBay', 'Ericsson', 'ExxonMobil', 'Expedia', 'Edelman'],
-    F: ['Facebook', 'Ford', 'Fidelity', 'FedEx', 'Fujitsu'],
-    G: ['Google', 'Goldman Sachs', 'General Motors', 'GE', 'Gartner'],
-    H: ['HP', 'Hewlett Packard Enterprise', 'Honeywell', 'HSBC', 'HCL'],
-    I: ['IBM', 'Intel', 'Infosys', 'IKEA', 'InterContinental Hotels'],
-    J: ['JP Morgan', 'Johnson & Johnson', 'Juniper Networks', 'Jabil', 'JetBlue'],
-    K: ['KPMG', 'Kellogg', 'Kraft Heinz', 'Kingfisher', 'Kia Motors'],
-    L: ['LinkedIn', 'Larsen & Toubro', 'Lockheed Martin', 'Lufthansa', 'Lowe\'s'],
-    M: ['Microsoft', 'Morgan Stanley', 'McKinsey & Company', 'Mastercard', 'Merck'],
-    N: ['Netflix', 'Nokia', 'Nestle', 'NVIDIA', 'Nissan'],
-    O: ['Oracle', 'OYO', 'OpenText', 'Oberoi Hotels', 'Occidental Petroleum'],
-    P: ['PayPal', 'PepsiCo', 'Philips', 'Procter & Gamble', 'Pfizer'],
-    Q: ['Qualcomm', 'Quora', 'Qatar Airways', 'Quick Heal', 'Quad'],
-    R: ['Red Hat', 'Roche', 'Raytheon', 'Royal Dutch Shell', 'Rakuten'],
-    S: ['Salesforce', 'Siemens', 'Samsung', 'Spotify', 'SpaceX'],
-    T: ['Tesla', 'Tata Consultancy Services', 'Twitter', 'Toyota', 'TikTok'],
-    U: ['Uber', 'Unilever', 'UPS', 'United Airlines', 'U.S. Bank'],
-    V: ['Visa', 'Volvo', 'Verizon', 'VMware', 'Vanguard'],
-    W: ['Walmart', 'Wipro', 'Western Union', 'Warner Bros', 'WeWork'],
-    X: ['Xerox', 'Xiaomi', 'Xilinx', 'XPO Logistics', 'Xylem'],
-    Y: ['Yahoo', 'Yamaha', 'Yandex', 'Yum Brands', 'Yellow Pages'],
-    Z: ['Zoom', 'Zebra Technologies', 'Zillow', 'Zscaler', 'Zendesk']
-};
+    function displayEmployersByLetter(letter, clickedButton) {
+        employerLetterTitle.textContent = `Employers Starting With "${letter}"`;
+        employersList.innerHTML = '';
+        employers[letter].forEach(employer => {
+            const li = document.createElement('li');
+            li.textContent = employer;
+            employersList.appendChild(li);
+        });
 
-// Get reference to the container and the display elements
-const alphabetButtonsContainer = document.getElementById('alphabetButtonsContainer');
-const employerLetterTitle = document.getElementById('employerLetterTitle');
-const employersList = document.getElementById('employersList');
+        if (activeButton) {
+            activeButton.classList.remove('scale-110', 'bg-teal-700');
+        }
 
-// Keep track of the currently active button
-let activeButton = null;
-
-// Function to display employers based on the selected letter
-function displayEmployersByLetter(letter, clickedButton) {
-    // Update the title
-    employerLetterTitle.textContent = `Employers Starting With "${letter}"`;
-
-    // Clear the existing list
-    employersList.innerHTML = '';
-
-    // Populate the list with the employers under the selected letter
-    employers[letter].forEach(employer => {
-        const li = document.createElement('li');
-        li.textContent = employer;
-        employersList.appendChild(li);
-    });
-
-    // If there is an active button, reset its size
-    if (activeButton) {
-        activeButton.classList.remove('scale-110', 'bg-teal-700'); // Reset the size of the previously clicked button
+        clickedButton.classList.add('scale-110', 'bg-teal-700');
+        activeButton = clickedButton;
     }
 
-    // Set the clicked button as active and apply the size increase
-    clickedButton.classList.add('scale-110', 'bg-teal-700');
-    activeButton = clickedButton; // Update the active button reference
+    function createAlphabetButtons() {
+        const letters = Object.keys(employers);
+
+        letters.forEach((letter, index) => {
+            const button = document.createElement('button');
+            button.textContent = letter;
+            button.className = 'bg-teal-600 hover:bg-teal-700 hover:underline text-white font-bold py-2 px-4 rounded w-12 h-12 flex items-center justify-center transition-transform transform';
+
+            button.addEventListener('click', () => displayEmployersByLetter(letter, button));
+
+            alphabetButtonsContainer.appendChild(button);
+
+            if (index === 0) {
+                button.classList.add('scale-110', 'bg-teal-700');
+                activeButton = button;
+            }
+        });
+    }
+
+    createAlphabetButtons();
+    displayEmployersByLetter('A', activeButton);
 }
 
-// Function to create the alphabet buttons dynamically
-function createAlphabetButtons() {
-    const letters = Object.keys(employers);
-
-    letters.forEach((letter, index) => {
-        const button = document.createElement('button');
-        button.textContent = letter;
-        button.className = 'bg-teal-600 hover:bg-teal-700 hover:underline text-white font-bold py-2 px-4 rounded w-12 h-12 flex items-center justify-center transition-transform transform'; // Added equal width, height, and transformation properties
-
-        // Add click event listener to each button
-        button.addEventListener('click', () => displayEmployersByLetter(letter, button));
-
-        // Append button to the container
-        alphabetButtonsContainer.appendChild(button);
-
-        // Set "A" as the active button by default
-        if (index === 0) { // The first button (for "A")
-            button.classList.add('scale-110', 'bg-teal-700'); // Make "A" button look clicked
-            activeButton = button; // Set the first button as active
-        }
-    });
-}
-
-// Initial setup: Create the alphabet buttons and display "A" employers by default
-createAlphabetButtons();
-displayEmployersByLetter('A', activeButton); // Display "A" employers by default
 
 
 

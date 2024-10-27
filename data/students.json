@@ -1,185 +1,184 @@
 {
-    "students": [
-      {
-        "name": "Satyam Chitransh",
-        "designation": "Head, Training and Placement Cell",
-        "branch": "Computer Science and Engineering",
-        "course": "B-Tech",
-        "year": "4",
-        "contact": "9142730790",
-        "email": "satyam@example.com"
-      },
-      {
-        "name": "Ananya Singh",
-        "designation": "Member, Placement Cell",
-        "branch": "Electronics and Communication",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142731234",
-        "email": "ananya@example.com"
-      },
-      {
-        "name": "Ravi Kumar",
-        "designation": "Member, Placement Cell",
-        "branch": "Mechanical Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142735678",
-        "email": "ravi@example.com"
-      },
-      {
-        "name": "Neha Verma",
-        "designation": "Member, Placement Cell",
-        "branch": "Civil Engineering",
-        "course": "B-Tech",
-        "year": "4",
-        "contact": "9142736789",
-        "email": "neha@example.com"
-      },
-      {
-        "name": "Akash Sharma",
-        "designation": "Member, Placement Cell",
-        "branch": "Electrical Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142737890",
-        "email": "akash@example.com"
-      },
-      {
-        "name": "Priya Mishra",
-        "designation": "Coordinator",
-        "branch": "Chemical Engineering",
-        "course": "B-Tech",
-        "year": "4",
-        "contact": "9142738901",
-        "email": "priya@example.com"
-      },
-      {
-        "name": "Vivek Gupta",
-        "designation": "Coordinator",
-        "branch": "Information Technology",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142739012",
-        "email": "vivek@example.com"
-      },
-      {
-        "name": "Sneha Roy",
-        "designation": "Member, Placement Cell",
-        "branch": "Biotechnology",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142740123",
-        "email": "sneha@example.com"
-      },
-      {
-        "name": "Rahul Jain",
-        "designation": "Member, Placement Cell",
-        "branch": "Metallurgical Engineering",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142741234",
-        "email": "rahul@example.com"
-      },
-      {
-        "name": "Deepak Patel",
-        "designation": "Member, Placement Cell",
-        "branch": "Computer Science and Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142742345",
-        "email": "deepak@example.com"
-      },
-      {
-        "name": "Gaurav Kumar",
-        "designation": "Member, Placement Cell",
-        "branch": "Mechanical Engineering",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142743456",
-        "email": "gaurav@example.com"
-      },
-      {
-        "name": "Arjun Yadav",
-        "designation": "Member, Placement Cell",
-        "branch": "Civil Engineering",
-        "course": "B-Tech",
-        "year": "4",
-        "contact": "9142744567",
-        "email": "arjun@example.com"
-      },
-      {
-        "name": "Pooja Sharma",
-        "designation": "Member, Placement Cell",
-        "branch": "Electrical Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142745678",
-        "email": "pooja@example.com"
-      },
-      {
-        "name": "Suresh Meena",
-        "designation": "Member, Placement Cell",
-        "branch": "Chemical Engineering",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142746789",
-        "email": "suresh@example.com"
-      },
-      {
-        "name": "Krishna Singh",
-        "designation": "Coordinator",
-        "branch": "Information Technology",
-        "course": "B-Tech",
-        "year": "4",
-        "contact": "9142747890",
-        "email": "krishna@example.com"
-      },
-      {
-        "name": "Simran Kaur",
-        "designation": "Member, Placement Cell",
-        "branch": "Biotechnology",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142748901",
-        "email": "simran@example.com"
-      },
-      {
-        "name": "Manish Agarwal",
-        "designation": "Member, Placement Cell",
-        "branch": "Metallurgical Engineering",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142749012",
-        "email": "manish@example.com"
-      },
-      {
-        "name": "Vikas Gupta",
-        "designation": "Member, Placement Cell",
-        "branch": "Computer Science and Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142750123",
-        "email": "vikas@example.com"
-      },
-      {
-        "name": "Ritika Singh",
-        "designation": "Member, Placement Cell",
-        "branch": "Mechanical Engineering",
-        "course": "B-Tech",
-        "year": "3",
-        "contact": "9142751234",
-        "email": "ritika@example.com"
-      },
-      {
-        "name": "Anil Kumar",
-        "designation": "Member, Placement Cell",
-        "branch": "Civil Engineering",
-        "course": "B-Tech",
-        "year": "2",
-        "contact": "9142752345",
-        "email": "anil@example.com"
-      }
-    ]
-  }
-  
+  "students": [
+    {
+      "name": "Umang Verma",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Industrial & Production Engineering",
+      "year": "3rd",
+      "contact": "8827162263",
+      "email": ""
+    },
+    {
+      "name": "Aarshi Dubey",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Industrial & Production Engineering",
+      "year": "3rd",
+      "contact": "9302987846",
+      "email": ""
+    },
+    {
+      "name": "Kunal Banerjee",
+      "designation": "Member, Placement Cell",
+      "branch": "Industrial & Production Engineering",
+      "course": "B-Tech",
+      "year": "3rd",
+      "contact": "7384706948",
+      "email": ""
+    },
+    {
+      "name": "Raushan Yadav",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Industrial & Production Engineering",
+      "year": "3rd",
+      "contact": "8789724223",
+      "email": ""
+    },
+    {
+      "name": "Kashish Sain",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Chemical Engineering",
+      "year": "3rd",
+      "contact": "8690831807",
+      "email": ""
+    },
+    {
+      "name": "Priyanjana",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Chemical Engineering",
+      "year": "3rd",
+      "contact": "6002688377",
+      "email": ""
+    },
+    {
+      "name": "Eram Farheen",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Mechanical Engineering",
+      "year": "3rd",
+      "contact": "8986367150",
+      "email": ""
+    },
+    {
+      "name": "Satyam",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Mechanical Engineering",
+      "year": "3rd",
+      "contact": "9798281544",
+      "email": ""
+    },
+    {
+      "name": "Anand Raj",
+      "designation": "Member, Placement Cell",
+      "branch": "Mechanical Engineering",
+      "course": "B-Tech",
+      "year": "3rd",
+      "contact": "8271916720",
+      "email": ""
+    },
+    {
+      "name": "Ayushi Saraf",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Civil Engineering",
+      "year": "3rd",
+      "contact": "9301574751",
+      "email": ""
+    },
+    {
+      "name": "Sumit Kumar",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Civil Engineering",
+      "year": "3rd",
+      "contact": "8102367645",
+      "email": ""
+    },
+    {
+      "name": "Divyansh Pandey",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Electronics and Communication Engineering",
+      "year": "3rd",
+      "contact": "9648697383",
+      "email": "divyanshece242@gmail.com"
+    },
+    {
+      "name": "Sana Pavani",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Electronics and Communication Engineering",
+      "year": "3rd",
+      "contact": "7815892781",
+      "email": ""
+    },
+    {
+      "name": "Aditya Raj",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Electronics and Communication Engineering",
+      "year": "3rd",
+      "contact": "8102471811",
+      "email": ""
+    },
+    {
+      "name": "Surojit Mondal",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Information Technology",
+      "year": "3rd",
+      "contact": "9748997344",
+      "email": "surojitmondalit@gmail.com"
+    },
+    {
+      "name": "Anshuman Mishra",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Information Technology",
+      "year": "3rd",
+      "contact": "7408047420",
+      "email": ""
+    },
+    {
+      "name": "Ujjwal Singh",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Information Technology",
+      "year": "3rd",
+      "contact": "9336636169",
+      "email": ""
+    },
+    {
+      "name": "Shivam Kumar",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Computer Science and Engineering",
+      "year": "3rd",
+      "contact": "7321982318",
+      "email": ""
+    },
+    {
+      "name": "Prince Aman",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Computer Science and Engineering",
+      "year": "3rd",
+      "contact": "9798156528",
+      "email": ""
+    },
+    {
+      "name": "Beulah Jemimah",
+      "designation": "Member, Placement Cell",
+      "course": "B-Tech",
+      "branch": "Computer Science and Engineering",
+      "year": "3rd",
+      "contact": "8074523794",
+      "email": ""
+    }
+  ]
+}

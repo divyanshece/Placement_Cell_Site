@@ -7,81 +7,16 @@
     <title>SOSET - Demographics</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/output.css" />
 </head>
 
 <body class="bg-gray-100">
 
-    <div class="container mx-auto bg-white" data-aos="fade-down" data-aos-duration="1000">
-        <div class="flex flex-wrap items-center">
-            <div class="w-full sm:w-2/12">
-                <div class="logo">
-                    <a href="#">
-                        <img src="./images/ggu_logo.png" alt="logo" class="mx-auto w-24 h-auto">
-                    </a>
-                </div>
-            </div>
-            <div class="w-full sm:w-8/12 text-center" data-aos="zoom-in" data-aos-duration="1500">
-                <div class="text-teal-800">
-                    <p class="font-bold text-xl">गुरु घासीदास विश्‍वविद्यालय, बिलासपुर</p>
-                    <p class="font-bold text-xl">Guru Ghasidas Vishwavidyalaya, Bilaspur</p>
-                    <small class="block text-sm">A Central University established by the Central Universities Act 2009
-                        No. 25 of
-                        2009</small>
-                </div>
-            </div>
-            <div class="w-full sm:w-2/12" data-aos="fade-left" data-aos-duration="1000">
-                <div class="mx-auto">
-                    <img src="./images/guru_ghasidas.png" alt="image" class="mx-auto w-24 h-auto">
-                </div>
-            </div>
-        </div>
-    </div>
+    <header id="header1" class="z-40"></header>
+    <header id="header2" class=" sticky top-0 left-0 z-40"></header>
 
-    <header
-        class="flex justify-between items-center bg-blue-500 shadow-md sticky top-0 left-0 z-40 backdrop-blur-md h-16 w-full px-4 lg:px-8">
-
-        <!-- Logo -->
-        <a href="./index.html" class="flex gap-2">
-            <div class="text-2xl font-bold w-72 h-full flex items-center text-white">T&P Cell - SOSET</div>
-        </a>
-
-        <div class="flex gap-6 md:gap-10">
-            <!-- Hamburger Menu for Mobile -->
-            <div class="flex lg:hidden items-center">
-                <button id="menu-toggle" class="text-gray-200 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Navigation Links -->
-        <nav id="nav-links"
-            class="flex flex-col items-center max-h-0 lg:max-h-full lg:flex lg:flex-row lg:items-center lg:space-x-4 lg:h-full absolute top-16 left-0 w-full bg-gray-800 bg-opacity-95 lg:bg-opacity-90 shadow-md lg:relative lg:bg-transparent lg:shadow-none lg:top-0 lg:w-auto lg:translate-x-0 transition-all transform duration-500 ease-in-out overflow-hidden xl:overflow-visible">
-            <a href="./index.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-home mr-2 group-hover:text-gray-200"></i> Home
-            </a>
-            <a href="./index.html#why-recruit" class="py-4 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-question-circle mr-2 group-hover:text-gray-200"></i> Why Recruit?
-            </a>
-            <a href="#for-recruiters" class="py-4 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-briefcase mr-2 group-hover:text-gray-200"></i> For Recruiters
-            </a>
-            <a href="./team.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-users mr-2 group-hover:text-gray-200"></i> Student Team
-            </a>
-            <a href="./contact.html" class="py-4 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-envelope mr-2 group-hover:text-gray-200"></i> Contact Us
-            </a>
-        </nav>
-    </header>
-
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col md:flex-row max-w-screen-2xl w-full mx-auto">
         <aside class="bg-gray-800 w-full md:w-1/5 sticky top-16 p-4 h-auto md:h-screen overflow-y-auto">
             <nav class="flex flex-col space-y-4">
                 <a href="#overview" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
@@ -176,7 +111,7 @@
                             <p class=" font-semibold">Click branch to know its gender distribution</p>
                         </div>
                         <button id="backToBranchBtn" class="bg-teal-800 text-white px-4 py-2 rounded-lg hidden"
-                            onclick="showBranchChart()">Back to Branch</button>
+                            onclick="resetBranchChart()">Back to Branch</button>
                     </div>
 
                 </div>
@@ -394,6 +329,8 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/demographics.js"></script>
 </body>
 

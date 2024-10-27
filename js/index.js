@@ -1,37 +1,64 @@
-// // Function to handle the hover effect
-// function handleHover(hoveredDiv) {
-//     document.querySelectorAll('.transition-width').forEach(div => {
-//         if (div === hoveredDiv) {
-//             div.classList.add('w-1/2');
-//             div.classList.remove('flex-1');
-//         } else {
-//             div.classList.add('w-1/4');
-//             div.classList.remove('flex-1');
-//         }
-//     });
-// }
-
-// // Function to reset the divs to equal width
-// function resetDivs() {
-//     document.querySelectorAll('.transition-width').forEach(div => {
-//         div.classList.remove('w-1/2', 'w-1/4');
-//         div.classList.add('flex-1');
-//     });
-// }
-
-// // Add event listeners for each div
-// document.querySelectorAll('.transition-width').forEach(div => {
-//     div.addEventListener('mouseenter', () => handleHover(div));
-//     div.addEventListener('mouseleave', resetDivs);
+// AOS.init({
+//     duration: 1000,
 // });
 
+async function loadData() {
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbyrXCMRCX3oAB1vKyy2uOuEw3Za8l374I4x6tYvL3eG2wSTUXT9wpQ22E6uDg_5HCg8/exec';
 
+    try {
+        // Fetch data from the API
+        const response = await fetch(apiUrl);
+        const data = await response.json();
 
+        // Select all hardcoded slides
+        const slides = document.querySelectorAll('.swiper-slide');
 
+        // Loop through each slide and corresponding data item
+        data.data.forEach((item, index) => {
+            if (index < slides.length) { // Ensure we don't exceed available slides
+                const slide = slides[index];
+                const img = slide.querySelector('img');
+                const skeleton = slide.querySelector('.skeleton');
 
+                // Update the slide's image source, alt text, and title with data from API
+                img.src = item['Image Link'];
+                img.alt = item['Short Desc'];
+                slide.title = item['Short Desc'];
 
+                // Once the image loads, remove the skeleton and show the image
+                img.onload = () => {
+                    skeleton.classList.add('hidden');  // Hide skeleton
+                    img.classList.remove('hidden');    // Show image
+                };
+            }
+        });
 
+        // Initialize Swiper after data is loaded
+        new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 8,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                480: { slidesPerView: 2, spaceBetween: 10 },
+                640: { slidesPerView: 2, spaceBetween: 12 },
+                768: { slidesPerView: 3, spaceBetween: 15 },
+                1024: { slidesPerView: 4, spaceBetween: 18 },
+                1280: { slidesPerView: 4, spaceBetween: 20 },
+                1536: { slidesPerView: 5, spaceBetween: 24 },
+            },
+        });
 
+    } catch (error) {
+        console.error('Error loading data:', error);
+    }
+}
+
+// Call loadData to fetch data and update slides
+loadData();
 
 
 let containers = document.querySelectorAll(".logo-cloud");
@@ -53,11 +80,3 @@ function snapBackToCenter(event) {
         });
     }, 100);
 }
-
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('max-h-[1000px]');
-    console.log("clicked");
-});

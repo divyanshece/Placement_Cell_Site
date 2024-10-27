@@ -30,7 +30,7 @@ function renderCards(data) {
                 <h3 class="text-lg font-semibold">${student.name}</h3>
                 <p class="text-sm text-gray-600">${student.designation}</p>
                 <p class="text-sm">${student.branch}</p>
-                <p class="text-sm">${student.course}, Year ${student.year}</p>
+                <p class="text-sm">${student.course}, ${student.year} Year</p>
                 <a href="tel:${student.contact}" class="text-blue-600"><i class="fas fa-phone"></i> ${student.contact}</a>
                 <br>
                 <a href="mailto:${student.email}" class="text-blue-600"><i class="fas fa-envelope"></i> ${student.email}</a>
@@ -106,13 +106,4 @@ document.getElementById('next-page').addEventListener('click', () => {
         currentPage++;
         renderPaginatedData();
     }
-});
-
-
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('max-h-[1000px]');
-    console.log("clicked");
 });

@@ -1,0 +1,67 @@
+{
+    "yearlyPlacements": {
+        "2019": 150,
+        "2020": 160,
+        "2021": 170,
+        "2022": 180,
+        "2023": 190
+    },
+    "placedPerBranch": {
+        "CSE": 120,
+        "IT": 115,
+        "ECE": 110,
+        "Mech.": 105,
+        "Civil": 100,
+        "Chem.": 102,
+        "IPE": 109,
+        "EEE": 101
+    },
+    "branches": {
+        "CSE": 130,
+        "IT": 125,
+        "ECE": 120,
+        "Mech.": 115,
+        "Civil": 110,
+        "Chem.": 112,
+        "IPE": 119,
+        "EEE": 111
+    },
+   "genderData": {
+        "CSE": [65, 35],
+        "IT": [60, 40],
+        "ECE": [70, 30],
+        "Mech.": [85, 15],
+        "Civil": [75, 25],
+        "Chem.": [50, 50],
+        "IPE": [55, 45],
+        "EEE": [60, 40]
+    },
+    "employers": {
+        "A": ["Amazon", "Adobe", "Accenture", "Apple", "Airbnb"],
+        "B": ["Boeing", "Bosch", "Bain & Company", "BMW", "BlackRock"],
+        "C": ["Cisco", "Cognizant", "Capgemini", "Citibank", "Chevron"],
+        "D": ["Deloitte", "Dropbox", "Dell", "Disney", "Dow Chemical"],
+        "E": ["eBay", "Ericsson", "ExxonMobil", "Expedia", "Edelman"],
+        "F": ["Facebook", "Ford", "Fidelity", "FedEx", "Fujitsu"],
+        "G": ["Google", "Goldman Sachs", "General Motors", "GE", "Gartner"],
+        "H": ["HP", "Hewlett Packard Enterprise", "Honeywell", "HSBC", "HCL"],
+        "I": ["IBM", "Intel", "Infosys", "IKEA", "InterContinental Hotels"],
+        "J": ["JP Morgan", "Johnson & Johnson", "Juniper Networks", "Jabil", "JetBlue"],
+        "K": ["KPMG", "Kellogg", "Kraft Heinz", "Kingfisher", "Kia Motors"],
+        "L": ["LinkedIn", "Larsen & Toubro", "Lockheed Martin", "Lufthansa", "Lowe's"],
+        "M": ["Microsoft", "Morgan Stanley", "McKinsey & Company", "Mastercard", "Merck"],
+        "N": ["Netflix", "Nokia", "Nestle", "NVIDIA", "Nissan"],
+        "O": ["Oracle", "OYO", "OpenText", "Oberoi Hotels", "Occidental Petroleum"],
+        "P": ["PayPal", "PepsiCo", "Philips", "Procter & Gamble", "Pfizer"],
+        "Q": ["Qualcomm", "Quora", "Qatar Airways", "Quick Heal", "Quad"],
+        "R": ["Red Hat", "Roche", "Raytheon", "Royal Dutch Shell", "Rakuten"],
+        "S": ["Salesforce", "Siemens", "Samsung", "Spotify", "SpaceX"],
+        "T": ["Tesla", "Tata Consultancy Services", "Twitter", "Toyota", "TikTok"],
+        "U": ["Uber", "Unilever", "UPS", "United Airlines", "U.S. Bank"],
+        "V": ["Visa", "Volvo", "Verizon", "VMware", "Vanguard"],
+        "W": ["Walmart", "Wipro", "Western Union", "Warner Bros", "WeWork"],
+        "X": ["Xerox", "Xiaomi", "Xilinx", "XPO Logistics", "Xylem"],
+        "Y": ["Yahoo", "Yamaha", "Yandex", "Yum Brands", "Yellow Pages"],
+        "Z": ["Zoom", "Zebra Technologies", "Zillow", "Zscaler", "Zendesk"]
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "hotels": [
+        {
+            "name": "Citymall 36",
+            "rating": "4 Star",
+            "address": "Citymall 36, Chowk, Ganga Nagar Sector - 2, Ganga Nagar, Mangla, Bilaspur, Chhattisgarh 495001",
+            "phone": "07752432222",
+            "details": "https://g.co/kgs/J1EupBJ"
+        },
+        {
+            "name": "Hotel Maa Jagdamba Palace",
+            "rating": "3 Star",
+            "address": "Mangala Rd, beside Holy Cross School, 27 Kholi, Vikas Nagar, Mangla, Bilaspur, Chhattisgarh 495001",
+            "phone": "07752357487",
+            "details": "https://g.co/kgs/Ag1nLfz"
+        },
+        {
+            "name": "Hotel O Golden Leaf",
+            "rating": "3 Star",
+            "address": "1, behind Red Chilly Restaurant, Rajaswa Colony, Sarkanda, Bilaspur, Chhattisgarh 495006",
+            "phone": "0124 620 1519",
+            "details": "https://g.co/kgs/kMKSw1H"
+        },
+        {
+            "name": "Hotel Regal",
+            "rating": "3 Star",
+            "address": "173/18, Shiv Talkies Road, Nehru Nagar, Telipara, Chhattisgarh 495001",
+            "phone": "099772 66118",
+            "details": "https://www.google.com/travel/hotels/s/iwdEFZjwr7tmxwnT6"
+        },
+        {
+            "name": "Hotel Shivneri",
+            "rating": "3 Star",
+            "address": "Link Rd, Near CMD College, Vidya Nagar, Chhattisgarh 495004",
+            "phone": "098279 97128",
+            "details": "https://g.co/kgs/ZCcpeuU"
+        },
+        {
+            "name": "Hotel Surya",
+            "rating": "3 Star",
+            "address": "Old Bus Stand Square, Chhattisgarh 495001",
+            "phone": "91-8048958359",
+            "details": "https://www.google.com/travel/hotels/s/6MSV7qEhWBQ8pvpw7"
+        },
+        {
+            "name": "Hotel Vinayak Palace",
+            "rating": "3 Star",
+            "address": "2nd Floor Siddhi Vinayak Shopping Arcade, Telipara, 495001",
+            "phone": "075090 60606",
+            "details": "https://g.co/kgs/NQXih3r"
+        },
+        {
+            "name": "Hotel The Emerald",
+            "rating": "2 Star",
+            "address": "35G4+H95 Hotel The Emerald, Telephone Exchange Rd, Telipara, Chhattisgarh 495001",
+            "phone": "077524 11611",
+            "details": "https://g.co/kgs/gXBx5wy"
+        },
+        {
+            "name": "Hotel Mayur",
+            "rating": "2 Star",
+            "address": "Old High Ct Rd, opp. Bihari Talkies, Bilaspur, Telipara, Chhattisgarh 495001",
+            "phone": "077524 14094",
+            "details": "https://www.google.com/travel/hotels/s/RqeCjjJB6Acai9mv7"
+        },
+        {
+            "name": "Hotel Maan In",
+            "rating": "",
+            "address": "Plot No. 01, Adarsh Nagar Rd, near Pani Tanki, Sirgitti, Bilaspur, Chhattisgarh 495001",
+            "phone": "0124 620 1519",
+            "details": "https://www.google.com/travel/hotels/s/mMXcgwztSTm1gpjf9"
+        },
+        {
+            "name": "Hotel O Happy Stay Guest House",
+            "rating": "",
+            "address": "Plot No. 01, near Apollo Hospital, Lingiadih, Chhattisgarh 495006",
+            "phone": "0124 620 1519",
+            "details": "https://g.co/kgs/y8aFo2i"
+        },
+        {
+            "name": "Hotel O Samridhi",
+            "rating": "",
+            "address": "near Shani Mandir, Brij Vihar Nagar, Rajkishore Nagar, Bilaspur, Chhattisgarh 495006",
+            "phone": "0124 620 1519",
+            "details": "https://g.co/kgs/iAvMhVF"
+        },
+        {
+            "name": "Hotel O Tulsi Palace",
+            "rating": "",
+            "address": "In Front of Brilliant Public School, Bahtarai, Chhattisgarh 495006",
+            "phone": "0124 620 1519",
+            "details": "https://g.co/kgs/THKyBtm"
+        },
+        {
+            "name": "Hotel Raja",
+            "rating": "",
+            "address": "Telephone Exchange Road, Old Bus Stand, Bilaspur, Chhattisgarh 495001",
+            "phone": "062623 66060",
+            "details": "https://www.google.com/travel/hotels/s/i82ZxLbgS6BgSRio7"
+        },
+        {
+            "name": "Hotel Shyama",
+            "rating": "",
+            "address": "opposite PGBT College, Tarbahar Chowk, Bilaspur, Telipara, Chhattisgarh 495001",
+            "phone": "077524 21400",
+            "details": "https://g.co/kgs/UwQ4qRr"
+        }
+    ]
+}
