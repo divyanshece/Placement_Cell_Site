@@ -122,7 +122,7 @@ Promise.all([
                     <p class="text-xs text-gray-500 hyphens-auto">${date}</p>
                     <p class="hyphens-auto">${announcementText}</p>
                 </div>
-                <img src="images/new.gif" alt="New" class="absolute -top-1 right-1 w-9 h-5">
+                <img src="assets/new.gif" alt="New" class="absolute -top-1 right-1 w-9 h-5">
             `;
             announcementList.appendChild(announcementItem);
         });
