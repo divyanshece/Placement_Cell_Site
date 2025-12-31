@@ -26,176 +26,151 @@
   <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
 
   <!-- Stylesheets -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
   <link rel="stylesheet" href="./cdns/aos/aos.css">
   <link rel="stylesheet" href="./cdns/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="./cdns/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./input.css" />
 
   <!-- Scripts -->
-  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="./cdns/swiper/swiper-bundle.js" defer></script>
   <script src="./cdns/aos/aos.js" defer></script>
   <script src="./js/common.js" defer></script>
   <script src="./js/index.js" defer></script>
 </head>
 
-<body class="bg-gray-100 max-w-screen-2xl mx-auto">
+<body class="bg-light">
 
   <!-- Preloader -->
-  <section id="preloader"
-    class="fixed inset-0 flex flex-col items-center justify-center bg-slate-50 z-50 max-w-screen-2xl mx-auto">
+  <section id="preloader" class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-light cpc-z-overlay">
     <!-- Logo in Center -->
-    <img src="assets/logos/logos_ggu3.png" alt="Logo" class="mb-6 w-28 h-28">
+    <img src="assets/logos/logos_ggu3.png" alt="Logo" class="mb-4 cpc-preloader-logo">
 
     <!-- Loader Spinner and Loading Text -->
-    <div class="loader flex items-center justify-center space-x-2 mb-6">
-      <div class="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-      <p class="text-blue-500 font-semibold text-lg animate-pulse">Loading...</p>
+    <div class="loader d-flex align-items-center justify-content-center gap-2 mb-4">
+      <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+      <p class="text-primary fw-semibold fs-5 mb-0 cpc-animate-pulse">Loading...</p>
     </div>
 
     <!-- Faded Background Image at the Bottom -->
-    <div class="absolute inset-x-0 bottom-0 w-full opacity-30 overflow-hidden">
-      <div class="absolute h-1/5 inset-0 bg-gradient-to-t from-transparent to-sky-50 z-50"></div>
-      <img src="assets/1.avif" alt="Background Image" class="w-full h-64 md:h-96 object-cover opacity-80">
+    <div class="cpc-preloader-bg">
+      <div class="cpc-preloader-gradient"></div>
+      <img src="assets/1.avif" alt="Background Image" class="cpc-preloader-img">
     </div>
   </section>
 
-  <header id="header1" class="z-40"></header>
-  <header id="header2" class="sticky top-0 left-0 z-40"></header>
-
+  <header id="header1"></header>
+  <header id="header2" class="sticky-top"></header>
 
   <section id="announcements"></section>
 
-
   <!-- Hero Video Section -->
-  <section class="relative h-[350px] max-w-screen-2xl w-full mx-auto">
-    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+  <section class="position-relative cpc-hero cpc-max-w mx-auto w-100">
+    <video autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
       <source src="./assets/hero.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
     <!-- Centered Logos Section -->
-    <div class="text-center relative z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-1">
 
       <!-- Logos -->
-      <div class="flex justify-center items-center space-x-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <img src="./assets/logos/logos_naac.png" alt="Logo 1" class="w-20 sm:w-24 h-auto">
-        <img src="./assets/logos/logos_ugc.png" alt="Logo 2" class="w-20 sm:w-24 h-auto">
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+        <img src="./assets/logos/logos_naac.png" alt="Logo 1" class="cpc-hero-logo">
+        <img src="./assets/logos/logos_ugc.png" alt="Logo 2" class="cpc-hero-logo">
       </div>
 
       <!-- Text Content -->
-      <h1 class="text-4xl font-bold text-white hidden sm:block" data-aos="fade-up" data-aos-delay="400"
+      <h1 class="cpc-hero-title text-white d-none d-sm-block" data-aos="fade-up" data-aos-delay="400"
         data-aos-once="true">
         Central Placement Cell
       </h1>
-      <h1 class="text-4xl font-bold text-white block sm:hidden" data-aos="fade-up" data-aos-delay="400"
+      <h1 class="cpc-hero-title text-white d-block d-sm-none" data-aos="fade-up" data-aos-delay="400"
         data-aos-once="true">
         Central Placement Cell
       </h1>
-      <p class="text-lg text-gray-300 mt-2" data-aos="fade-up" data-aos-delay="600" data-aos-once="true">
+      <p class="cpc-text-lg text-white-50 mt-2" data-aos="fade-up" data-aos-delay="600" data-aos-once="true">
         Guru Ghasidas Vishwavidyalaya, Bilaspur
       </p>
-      <div class="mt-6" data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
-        <a href="https://forms.gle/hjZi6rxityPHLFAA7" target="_blank"
-          class="bg-blue-500 text-white px-6 py-3 rounded-md ml-4">Hire a
+      <div class="mt-4" data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
+        <a href="https://forms.gle/hjZi6rxityPHLFAA7" target="_blank" class="btn btn-primary cpc-btn-hero ms-3">Hire a
           Talent</a>
       </div>
     </div>
   </section>
 
-
   <!-- About Section -->
-  <section class="py-20 px-8 md:px-16" data-aos="fade-up">
-    <div class="container mx-auto" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800" data-aos="fade-up" data-aos-delay="200">
+  <section class="cpc-section-xl" data-aos="fade-up">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="cpc-section-title text-center text-dark" data-aos="fade-up" data-aos-delay="200">
         Overview
       </h2>
-      <p class="text-justify hyphens-auto text-lg text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="300">
+      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4" data-aos="fade-up" data-aos-delay="300">
         The Central Placement Cell of Guru
         Ghasidas Vishwavidyalaya, Bilaspur, is dedicated to facilitating student placements across various
         disciplines. The CPC-GGV collaborates with leading
         organizations to provide internship & training opportunities, ensuring students are career-ready.
       </p>
-      <p class="text-justify hyphens-auto text-lg text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="400">
+      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4" data-aos="fade-up" data-aos-delay="400">
         The placement season runs from <b>late July to March</b>, during which numerous companies conduct campus
         interviews. The CPC-GGV is equipped with modern facilities for group discussions & interviews, & it
         organizes pre-placement talks to foster interaction between students & potential employers.
       </p>
-      <p class="text-justify hyphens-auto text-lg text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="500">
+      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-5" data-aos="fade-up" data-aos-delay="500">
         A committee of student representatives from undergraduate programs supports the CPC-GGV in developing annual
         policies & guidelines for the placement process. This collaboration ensures that
         student feedback is integral to decision-making.
       </p>
 
-      <div class="pt-8 sm:pt-16" data-aos="fade-up" data-aos-delay="600">
-        <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">Key Activities</h3>
+      <div class="cpc-pt-8 cpc-pt-16-at-640" data-aos="fade-up" data-aos-delay="600">
+        <h3 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5 text-dark">Key Activities</h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div class="cpc-ka-grid">
           <!-- Skill Development Programs Card -->
-          <div class="overflow-hidden group cursor-pointer" data-aos="zoom-in" data-aos-delay="700">
-            <div class="relative group rounded-lg overflow-hidden">
-              <img src="./assets/skill_development.avif" alt="Skill Development Programs"
-                class="w-full h-60 object-cover" />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-lg transition-opacity duration-300">
-                <i
-                  class="fas fa-comments text-gray-100 group-hover:text-white text-4xl mb-2 transition-colors duration-300"></i>
+          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="700">
+            <div class="cpc-ka-media">
+              <img src="./assets/skill_development.avif" alt="Skill Development Programs" class="cpc-ka-img" />
+              <div class="cpc-ka-overlay">
+                <i class="fas fa-comments cpc-ka-icon"></i>
               </div>
-              <div
-                class="absolute inset-x-0 bottom-0 h-1/2 bg-transparent group-hover:bg-gradient-to-t group-hover:from-gray-800 group-hover:to-transparent transition-all duration-300">
-              </div>
-              <p
-                class="text-white text-md text-center transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-transform duration-300 absolute bottom-4 left-0 right-0">
+              <div class="cpc-ka-gradient"></div>
+              <p class="cpc-ka-desc">
                 Offering communication skill development from the first semester.
               </p>
             </div>
-            <h4 class="text-center text-lg font-bold text-gray-800 mt-4">Skill Development Programs</h4>
+            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Skill Development Programs</h4>
           </div>
 
           <!-- Mock Interviews Card -->
-          <div class="overflow-hidden group cursor-pointer" data-aos="zoom-in" data-aos-delay="800">
-            <div class="relative group rounded-lg overflow-hidden">
-              <img src="./assets/mock_interview.jpeg" alt="Mock Interviews" class="w-full h-60 object-cover" />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-lg transition-opacity duration-300">
-                <i
-                  class="fas fa-user-check text-gray-100 group-hover:text-white text-4xl mb-2 transition-colors duration-300"></i>
+          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="800">
+            <div class="cpc-ka-media">
+              <img src="./assets/mock_interview.jpeg" alt="Mock Interviews" class="cpc-ka-img" />
+              <div class="cpc-ka-overlay">
+                <i class="fas fa-user-check cpc-ka-icon"></i>
               </div>
-              <div
-                class="absolute inset-x-0 bottom-0 h-1/2 bg-transparent group-hover:bg-gradient-to-t group-hover:from-gray-800 group-hover:to-transparent transition-all duration-300">
-              </div>
-              <p
-                class="text-white text-md text-center transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-transform duration-300 absolute bottom-4 left-0 right-0">
+              <div class="cpc-ka-gradient"></div>
+              <p class="cpc-ka-desc">
                 Organizing mock interviews & aptitude tests for pre-final & final-year students.
               </p>
             </div>
-            <h4 class="text-center text-lg font-bold text-gray-800 mt-4">Mock Interviews</h4>
+            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Mock Interviews</h4>
           </div>
 
           <!-- Industry Interaction Programs Card -->
-          <div class="overflow-hidden group cursor-pointer" data-aos="zoom-in" data-aos-delay="900">
-            <div class="relative group rounded-lg overflow-hidden">
-              <img src="./assets/industry_interaction.avif" alt="Industry Interaction Programs"
-                class="w-full h-60 object-cover" />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-lg transition-opacity duration-300">
-                <i
-                  class="fas fa-briefcase text-gray-100 group-hover:text-white text-4xl mb-2 transition-colors duration-300"></i>
+          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="900">
+            <div class="cpc-ka-media">
+              <img src="./assets/industry_interaction.avif" alt="Industry Interaction Programs" class="cpc-ka-img" />
+              <div class="cpc-ka-overlay">
+                <i class="fas fa-briefcase cpc-ka-icon"></i>
               </div>
-              <div
-                class="absolute inset-x-0 bottom-0 h-1/2 bg-transparent group-hover:bg-gradient-to-t group-hover:from-gray-800 group-hover:to-transparent transition-all duration-300">
-              </div>
-              <p
-                class="text-white text-md text-center transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-transform duration-300 absolute bottom-4 left-0 right-0">
+              <div class="cpc-ka-gradient"></div>
+              <p class="cpc-ka-desc">
                 Facilitating interactions between students & industry professionals.
               </p>
             </div>
-            <h4 class="text-center text-lg font-bold text-gray-800 mt-4">Industry Interaction Programs</h4>
+            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Industry Interaction Programs</h4>
           </div>
         </div>
       </div>
@@ -204,178 +179,166 @@
 
 
   <!-- Message Section -->
-  <section class="px-0 md:px-16 py-16">
-    <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Message From Heads</h2>
-    <div
-      class="relative flex flex-row overflow-auto hide-scrollbar h-[650px] sm:h-[500px] w-full space-x-2 p-0 sm:p-2 border-2 rounded-md snap-mandatory snap-x"
-      data-aos="fade-up">
+  <section class="cpc-msg-section">
+    <h2 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5" data-aos="fade-up">Message From Heads</h2>
+    <div class="cpc-msg-container" data-aos="fade-up">
+
 
       <!-- First Div -->
-      <div class="flex-1 min-w-full sm:min-w-fit h-full transition-all hover:flex-[2] group overflow-hidden snap-start">
-        <div class="relative w-full h-full" data-aos="zoom-in" data-aos-delay="100">
-          <img src="./assets/vc.avif" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
-          <div class="absolute inset-0 bg-black opacity-70"></div>
+      <div class="cpc-msg-slide">
+        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="100">
+          <img src="./assets/vc.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
           <!-- Circular Div in Center of First Div -->
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
+          <div class="cpc-msg-avatar-center">
 
-            <img src="./assets/vc.avif" alt="Circular Image" class="w-full h-full object-cover">
+            <img src="./assets/vc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
-          <div
-            class="absolute left-4 top-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
-            <img src="./assets/vc.avif" alt="Circular Image" class="w-full h-full object-cover">
+          <div class="cpc-msg-avatar-corner">
+            <img src="./assets/vc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
           <!-- Message Overlay for First Div -->
-          <div
-            class="absolute left-1/2 -translate-x-1/2 bottom-8 sm:bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center group-hover:hidden">
-            <i class="fas fa-quote-left text-2xl mb-2"></i>
-            <p class="text-lg font-semibold">Prof. A. K. Chakrawal,<br>Vice Chancellor, GGV</p>
+          <div class="cpc-msg-overlay-center">
+            <i class="fas fa-quote-left fs-3 mb-2"></i>
+            <p class="fs-5 fw-semibold mb-0">Prof. A. K. Chakrawal,<br>Vice Chancellor, GGV</p>
             <a href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/" target="_blank">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
+              <i class="fab fa-linkedin fs-4 mt-2"></i>
             </a>
           </div>
-          <div
-            class="absolute left-24 top-5 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
-            <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
-              <p class="text-sm font-semibold">Prof. A. K. Chakrawal</p>
-              <p class="text-sm font-semibold">Vice Chancellor, GGV</p>
+          <div class="cpc-msg-overlay-top">
+            <div class="cpc-msg-meta">
+              <div class="cpc-msg-meta-inner">
+                <p class="small fw-semibold mb-0">Prof. A. K. Chakrawal</p>
+                <p class="small fw-semibold mb-0">Vice Chancellor, GGV</p>
+              </div>
+              <a href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/" target="_blank" class="cpc-msg-meta-link">
+                <i class="fab fa-linkedin fs-4 mt-2"></i>
+              </a>
             </div>
-            <a href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/" target="_blank" class="pl-4">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
-            </a>
-          </div>
-          <div
-            class="absolute left-1/2 top-24 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
-            <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">Guru Ghasidas
-              Vishwavidyalaya
-              is
-              the Central University of Chhattisgarh which bears the principal charge of providing job-oriented
-              education,
-              taking care of the educational aspirations, propagation of quality education, & enlightenment of the
-              people
-              of local society & remote areas.
-              <br />
-              We shall comprehensively make efforts to grow this University, named after the great saint Baba Guru
-              Ghasidasji, like a banyan tree of higher learning at the national & international level.
-            </p>
+            <div class="cpc-msg-text">
+              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">Guru Ghasidas
+                Vishwavidyalaya
+                is
+                the Central University of Chhattisgarh which bears the principal charge of providing job-oriented
+                education,
+                taking care of the educational aspirations, propagation of quality education, & enlightenment of the
+                people
+                of local society & remote areas.
+                <br />
+                We shall comprehensively make efforts to grow this University, named after the great saint Baba Guru
+                Ghasidasji, like a banyan tree of higher learning at the national & international level.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Second Div -->
-      <div
-        class="relative flex-1 min-w-full sm:min-w-fit h-full transition-all hover:flex-[2] group overflow-hidden snap-start">
-        <div class="relative w-full h-full" data-aos="zoom-in" data-aos-delay="200">
-          <img src="./assets/pc.avif" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
-          <div class="absolute inset-0 bg-black opacity-70"></div>
+      <div class="cpc-msg-slide">
+        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="200">
+          <img src="./assets/pc.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
           <!-- Circular Div in Center of Second Div -->
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
-            <img src="./assets/pc.avif" alt="Circular Image" class="w-full h-full object-cover">
+          <div class="cpc-msg-avatar-center">
+            <img src="./assets/pc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
-          <div
-            class="absolute left-4 top-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
-            <img src="./assets/pc.avif" alt="Circular Image" class="w-full h-full object-cover">
+          <div class="cpc-msg-avatar-corner">
+            <img src="./assets/pc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
           <!-- Message Overlay for Second Div -->
-          <div
-            class="absolute left-1/2 -translate-x-1/2 bottom-8 sm:bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center group-hover:hidden">
-            <i class="fas fa-quote-left text-2xl mb-2"></i>
-            <p class="text-lg font-semibold">Mr. Premnath Kamlesh,<br>TPO, GGV</p>
+          <div class="cpc-msg-overlay-center">
+            <i class="fas fa-quote-left fs-3 mb-2"></i>
+            <p class="fs-5 fw-semibold mb-0">Mr. Premnath Kamlesh,<br>TPO, GGV</p>
             <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
+              <i class="fab fa-linkedin fs-4 mt-2"></i>
             </a>
           </div>
-          <div
-            class="absolute left-24 top-5 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
-            <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
-              <p class="text-sm font-semibold">Mr. Premnath Kamlesh</p>
-              <p class="text-sm font-semibold">TPO, GGV</p>
+          <div class="cpc-msg-overlay-top">
+            <div class="cpc-msg-meta">
+              <div class="cpc-msg-meta-inner">
+                <p class="small fw-semibold mb-0">Mr. Premnath Kamlesh</p>
+                <p class="small fw-semibold mb-0">TPO, GGV</p>
+              </div>
+              <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank" class="cpc-msg-meta-link">
+                <i class="fab fa-linkedin fs-4 mt-2"></i>
+              </a>
             </div>
-            <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank" class="pl-4">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
-            </a>
-          </div>
-          <div
-            class="absolute left-1/2 top-24 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
-            <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">The students of B.Tech,
-              School
-              of Studies in Engineering & Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur are ready to build their
-              encroach upon the professional arena. With uncompromising academic percentages, many bright students from
-              GGV
-              are nurtured as thoughtful techies because of their enthusiasm for the practical applicability of
-              technology,
-              especially computing.
-              <br />
-              If required, they are eager to do things abundant beyond. I am delighted to present this vibrant batch of
-              students to our honoured recruiters. I trust that they will prove they are capable & acceptable for your
-              industry. I'm desperate to welcome you to our campus & have a protracted & mutually propitious bond with
-              you. I firmly believe that the synergy of organizations will work wonders.
-            </p>
+            <div class="cpc-msg-text">
+              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">The students of B.Tech,
+                School
+                of Studies in Engineering & Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur are ready to build their
+                encroach upon the professional arena. With uncompromising academic percentages, many bright students from
+                GGV
+                are nurtured as thoughtful techies because of their enthusiasm for the practical applicability of
+                technology,
+                especially computing.
+                <br />
+                If required, they are eager to do things abundant beyond. I am delighted to present this vibrant batch of
+                students to our honoured recruiters. I trust that they will prove they are capable & acceptable for your
+                industry. I'm desperate to welcome you to our campus & have a protracted & mutually propitious bond with
+                you. I firmly believe that the synergy of organizations will work wonders.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Third Div -->
-      <div
-        class="relative flex-1 min-w-full sm:min-w-fit h-full transition-all hover:flex-[2] group overflow-hidden snap-start">
-        <div class="relative w-full h-full" data-aos="zoom-in" data-aos-delay="300">
-          <img src="./assets/pc2.avif" alt="Image 3" class="absolute inset-0 w-full h-full object-cover blur-sm">
-          <div class="absolute inset-0 bg-black opacity-70"></div>
+      <div class="cpc-msg-slide">
+        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="300">
+          <img src="./assets/pc2.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
           <!-- Circular Div in Center of Third Div -->
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 overflow-hidden rounded-full border-4 border-white transition-all duration-75 group-hover:opacity-0">
-            <img src="./assets/pc2.avif" alt="Circular Image" class="w-full h-full object-cover">
+          <div class="cpc-msg-avatar-center">
+            <img src="./assets/pc2.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
-          <div
-            class="absolute left-4 top-4 opacity-0 w-16 h-16 overflow-hidden rounded-full border-2 border-white transition-all duration-75 group-hover:opacity-100">
-            <img src="./assets/pc2.avif" alt="Circular Image" class="w-full h-full object-cover">
+          <div class="cpc-msg-avatar-corner">
+            <img src="./assets/pc2.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
           </div>
 
           <!-- Message Overlay for Third Div -->
-          <div
-            class="absolute left-1/2 -translate-x-1/2 bottom-8 sm:bottom-4 flex flex-col items-center justify-end w-64 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center group-hover:hidden">
-            <i class="fas fa-quote-left text-2xl mb-2"></i>
-            <p class="text-lg font-semibold">Prof. Ratnesh Singh,<br>Nodal Officer, GGV</p>
+          <div class="cpc-msg-overlay-center">
+            <i class="fas fa-quote-left fs-3 mb-2"></i>
+            <p class="fs-5 fw-semibold mb-0">Prof. Ratnesh Singh,<br>Nodal Officer, GGV</p>
             <a href="https://www.linkedin.com/in/dr-ratnesh-singh-6b153360/" target="_blank">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
+              <i class="fab fa-linkedin fs-4 mt-2"></i>
             </a>
           </div>
-          <div
-            class="absolute left-24 top-5 flex justify-start items-center w-60 p-2 text-white bg-black bg-opacity-40 rounded-lg shadow-lg text-center opacity-0 group-hover:opacity-100">
-            <div class="flex flex-col w-3/4 h-full justify-start items-start border-r-2 border-white">
-              <p class="text-sm font-semibold">Prof. Ratnesh Singh</p>
-              <p class="text-sm font-semibold">Nodal Officer, GGV</p>
+          <div class="cpc-msg-overlay-top">
+            <div class="cpc-msg-meta">
+              <div class="cpc-msg-meta-inner">
+                <p class="small fw-semibold mb-0">Prof. Ratnesh Singh</p>
+                <p class="small fw-semibold mb-0">Nodal Officer, GGV</p>
+              </div>
+              <a href="https://www.linkedin.com/in/dr-ratnesh-singh-6b153360/" target="_blank" class="cpc-msg-meta-link">
+                <i class="fab fa-linkedin fs-4 mt-2"></i>
+              </a>
             </div>
-            <a href="https://www.linkedin.com/in/dr-ratnesh-singh-6b153360/" target="_blank" class="pl-4">
-              <i class="fab fa-linkedin text-xl mt-2"></i>
-            </a>
-          </div>
-          <div
-            class="absolute left-1/2 top-24 -translate-x-1/2 opacity-0 group-hover:opacity-100 w-11/12 overflow-hidden z-10 transition-all duration-75">
-            <p class="text-white text-sm font-semibold text-justify hyphens-auto leading-7">I extend a cordial
-              invitation
-              for the
-              placement program at the School of Studies in Engineering & Technology, GGV.
-              We offer recruiters access to a unique bouquet of budding technical minds. Our students constitute the top
-              performers in JEE Mains & a re selected after one of the most rigorous admission processes across the
-              Country.
-              <br />
-              The breadth of talent available here is unparalleled across India, making it the campus-of-Choice for its
-              recruiters. The outstanding faculty, brilliant students, & unique course structure create a perfect
-              environment for developing future technical leaders. I assure you that your expectations will not just be
-              met
-              but will be surpassed substantially. GGV has been known for giving future leaders to the industry in India
-              also abroad.
-            </p>
+            <div class="cpc-msg-text">
+              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">I extend a cordial
+                invitation
+                for the
+                placement program at the School of Studies in Engineering & Technology, GGV.
+                We offer recruiters access to a unique bouquet of budding technical minds. Our students constitute the top
+                performers in JEE Mains & a re selected after one of the most rigorous admission processes across the
+                Country.
+                <br />
+                The breadth of talent available here is unparalleled across India, making it the campus-of-Choice for its
+                recruiters. The outstanding faculty, brilliant students, & unique course structure create a perfect
+                environment for developing future technical leaders. I assure you that your expectations will not just be
+                met
+                but will be surpassed substantially. GGV has been known for giving future leaders to the industry in India
+                also abroad.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -384,392 +347,413 @@
     </div>
   </section>
 
-
   <!-- Why Recruit Section -->
-  <section class="w-full h-auto px-8 sm:px-16 py-8 sm:py-16" id="why-recruit">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-14 mx-auto">
-      <!-- Left Side -->
-      <div class="space-y-6" data-aos="fade-right">
-        <h2 class="text-2xl font-extrabold text-gray-800 tracking-wide animate-fade-in pt-4">
-          WHY GURU GHASIDAS VISHWAVIDYALAYA
-        </h2>
-        <p class="text-lg text-gray-600 leading-relaxed animate-slide-in text-justify">
-          Grooming leaders who are not only thorough professionals but also good human beings with values, our
-          comprehensive approach emphasizes ethical leadership, critical thinking, & community engagement.
-        </p>
-        <p class="text-lg text-gray-600 leading-relaxed animate-slide-in text-justify">
-          We believe true success is measured not just by academic achievements, but by the positive impact our
-          graduates have on society—making us consistently ranked
-          <span class="text-xl font-bold text-gray-800">No.1</span>.
-        </p>
-        <div class="mt-6 flex flex-col gap-4 sm:flex-row justify-center items-center sm:justify-start"
-          data-aos="fade-up">
-          <a href="https://www.ggu.ac.in/SiteMap.aspx" target="_blank"
-            class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-500 hover:scale-105 transform transition-all ease-in-out duration-300 flex items-center">
-            <i class="fas fa-info-circle mr-2"></i> Read More About GGV
-          </a>
+  <section class="cpc-section-md" id="why-recruit">
+    <div class="container-xxl">
+      <div class="row g-5 align-items-start">
+        <!-- Left Side -->
+        <div class="col-12 col-md-6" data-aos="fade-right">
+          <div class="d-flex flex-column gap-4">
+            <h2 class="fs-4 fw-bold text-dark animate-fade-in pt-1">
+              WHY GURU GHASIDAS VISHWAVIDYALAYA
+            </h2>
+            <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
+              Grooming leaders who are not only thorough professionals but also good human beings with values, our
+              comprehensive approach emphasizes ethical leadership, critical thinking, & community engagement.
+            </p>
+            <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
+              We believe true success is measured not just by academic achievements, but by the positive impact our
+              graduates have on society—making us consistently ranked
+              <span class="fs-5 fw-bold text-dark">No.1</span>.
+            </p>
+            <div class="mt-2 d-grid gap-3 d-sm-flex justify-content-sm-start" data-aos="fade-up">
+              <a href="https://www.ggu.ac.in/SiteMap.aspx" target="_blank"
+                class="btn btn-primary shadow cpc-hover-pop d-flex align-items-center">
+                <i class="fas fa-info-circle me-2"></i> Read More About GGV
+              </a>
 
-          <a href="./demographics.html" target="_blank"
-            class="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-md shadow-lg hover:bg-green-500 hover:scale-105 transform transition-all ease-in-out duration-300 flex items-center">
-            <i class="fas fa-chart-pie mr-2"></i> View Detailed Demographics
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Side Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6" data-aos="fade-left">
-        <!-- Stat 1 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-yellow-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-trophy"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">#1</p>
-            <p class="text-gray-500 text-md">Graded Autonomy Grant</p>
+              <a href="./demographics.html" target="_blank"
+                class="btn btn-success shadow cpc-hover-pop d-flex align-items-center">
+                <i class="fas fa-chart-pie me-2"></i> View Detailed Demographics
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Stat 2 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-green-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-chart-line"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">Top</p>
-            <p class="text-gray-500 text-md">Placement in All Streams</p>
-          </div>
-        </div>
+        <!-- Right Side Stats -->
+        <div class="col-12 col-md-6 p-4" data-aos="fade-left">
+          <div class="row g-5">
+            <!-- Stat 1 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-yellow text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-trophy"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">#1</p>
+                  <p class="text-secondary mb-0">Graded Autonomy Grant</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Stat 3 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-purple-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-university"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">200+</p>
-            <p class="text-gray-500 text-md">Academic Programs</p>
-          </div>
-        </div>
+            <!-- Stat 2 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-green text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-chart-line"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">Top</p>
+                  <p class="text-secondary mb-0">Placement in All Streams</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Stat 4 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-red-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-rocket"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">10+</p>
-            <p class="text-gray-500 text-md">Startups</p>
-          </div>
-        </div>
+            <!-- Stat 3 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-purple text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-university"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">200+</p>
+                  <p class="text-secondary mb-0">Academic Programs</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Stat 5 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-blue-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-users"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">30,000+</p>
-            <p class="text-gray-500 text-md">Alumni Network</p>
-          </div>
-        </div>
+            <!-- Stat 4 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-red text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-rocket"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">10+</p>
+                  <p class="text-secondary mb-0">Startups</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Stat 6 -->
-        <div class="flex items-center space-x-6 transform hover:scale-105 transition-transform duration-300"
-          data-aos="zoom-in">
-          <div class="bg-teal-500 text-white p-4 shadow-lg rounded">
-            <p class="text-2xl font-bold"><i class="fas fa-globe"></i></p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-800">Multiple</p>
-            <p class="text-gray-500 text-md">Global Alliances</p>
+            <!-- Stat 5 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-blue text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-users"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">30,000+</p>
+                  <p class="text-secondary mb-0">Alumni Network</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stat 6 -->
+            <div class="col-12 col-md-6" data-aos="zoom-in">
+              <div class="d-flex align-items-center gap-4">
+                <div class="cpc-bg-teal text-white p-3 shadow rounded">
+                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-globe"></i></p>
+                </div>
+                <div>
+                  <p class="fs-4 fw-bold text-dark mb-0">Multiple</p>
+                  <p class="text-secondary mb-0">Global Alliances</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div id="student-achievements"></div>
-    <div class="mt-8 sm:mt-16 max-w-screen-2xl w-full mx-auto overflow-hidden" data-aos="fade-up">
-      <h3 class="text-2xl font-extrabold text-gray-800 tracking-wide mb-4">Student Achievements</h3>
-      <!-- Slider container -->
-      <div class="swiper-container w-full p-2 overflow-hidden" data-aos="fade-up">
-        <div class="swiper-wrapper">
-          <!-- Hardcoded slides with skeletons -->
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <!-- Image container -->
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <!-- Description container -->
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+    <div class="mt-5 mt-lg-5" data-aos="fade-up">
+      <div class="container-xxl overflow-hidden">
+        <h3 class="fs-4 fw-bold text-dark mb-4">Student Achievements</h3>
+        <!-- Slider container -->
+
+        <div class="swiper-container w-100 p-2 overflow-hidden" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <!-- Hardcoded slides with skeletons -->
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <!-- Image container -->
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <!-- Description container -->
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="swiper-slide group" title="Loading..." data-aos="zoom-in">
-            <div
-              class="bg-white rounded-xl shadow-md transition-shadow duration-300 overflow-hidden h-full">
-              <div class="relative h-48 overflow-hidden">
-                <div class="w-full h-full bg-gray-300 animate-pulse skeleton absolute inset-0 z-10"></div>
-                <img src="" alt="Loading..."
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <div class="p-4">
-                <div class="h-4 bg-gray-200 animate-pulse skeleton rounded"></div>
-                <p class="text-sm text-gray-600 font-medium truncate hidden achievement-desc"></p>
+            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
+                <div class="position-relative cpc-achievement-media overflow-hidden">
+                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
+                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4">
+                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
+                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
+
 
   </section>
 
 
   <!-- Past Recruiters Section -->
-  <section class="py-8 sm:py-16 max-w-screen-2xl w-full mx-auto overflow-hidden" data-aos="fade-up"
-    id="past-recruiters">
-    <div class="container mx-auto" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-3xl font-bold text-center mb-8">
+  <section class="cpc-section-xl" data-aos="fade-up" id="past-recruiters">
+    <div class="container-xxl" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="cpc-section-title text-center mb-0">
         Our Past Recruiters
       </h2>
     </div>
 
     <!-- logo-cloud -->
-    <div class="logo-cloud max-h-48 w-full overflow-x-auto hide-scrollbar mt-16 group" style="
-          mask-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 1) 30%,
-            rgba(0, 0, 0, 1) 70%,
-            rgba(0, 0, 0, 0)
-          );
-        ">
-      <div class="flex h-full min-w-[160%] overflow-hidden">
-        <span class="flex animate-slide group-hover:animate-paused items-center w-auto flex-shrink-0 py-2">
+    <div class="cpc-logo-cloud w-100 overflow-x-auto hide-scrollbar mt-5">
+      <div class="d-flex h-100 cpc-logo-track overflow-hidden">
+        <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
           <a href="https://www.larsentoubro.com/" target="_blank">
-            <img src="assets/logos/logos_lnt.png" class="object-contain max-w-40" alt="L&T" />
+            <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.geminisolutions.com/" target="_blank">
-            <img src="assets/logos/logos_gemini.png" class="object-contain max-w-40" alt="Gemini Solutions" />
+            <img src="assets/logos/logos_gemini.png" class="cpc-logo-cloud-img" alt="Gemini Solutions" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.thermaxglobal.com/" target="_blank">
-            <img src="assets/logos/logos_thermax.png" class="object-contain max-w-40" alt="Thermax" />
+            <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.adani.com/" target="_blank">
-            <img src="assets/logos/logos_adani.png" class="object-contain max-w-40" alt="Adani Enterprises" />
+            <img src="assets/logos/logos_adani.png" class="cpc-logo-cloud-img" alt="Adani Enterprises" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.allstate.com" target="_blank">
-            <img src="assets/logos/logos_allstate.png" class="object-contain max-w-40" alt="Allstate" />
+            <img src="assets/logos/logos_allstate.png" class="cpc-logo-cloud-img" alt="Allstate" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.zaggle.in" target="_blank">
-            <img src="assets/logos/logos_zaggle.png" class="object-contain max-w-40" alt="Zaggle" />
+            <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.dhoottransmission.com/" target="_blank">
-            <img src="assets/logos/logos_dhoot.png" class="object-contain max-w-40" alt="Dhoot Transmission" />
+            <img src="assets/logos/logos_dhoot.png" class="cpc-logo-cloud-img" alt="Dhoot Transmission" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.tcs.com" target="_blank">
-            <img src="assets/logos/logos_tcs.png" class="object-contain max-w-40" alt="TCS" />
+            <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.alohatechnology.com/" target="_blank">
-            <img src="assets/logos/logos_aloha.png" class="object-contain max-w-40" alt="Aloha Technology" />
+            <img src="assets/logos/logos_aloha.png" class="cpc-logo-cloud-img" alt="Aloha Technology" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.mountblue.io/" target="_blank">
-            <img src="assets/logos/logos_mountblue.png" class="object-contain max-w-40" alt="MountBlue Technologies" />
+            <img src="assets/logos/logos_mountblue.png" class="cpc-logo-cloud-img" alt="MountBlue Technologies" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.revature.com" target="_blank">
-            <img src="assets/logos/logos_revature.png" class="object-contain max-w-40" alt="Revature" />
+            <img src="assets/logos/logos_revature.png" class="cpc-logo-cloud-img" alt="Revature" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.wipro.com" target="_blank">
-            <img src="assets/logos/logos_wipro.png" class="object-contain max-w-40" alt="Wipro" />
+            <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.infosys.com" target="_blank">
-            <img src="assets/logos/logos_infosys.png" class="object-contain max-w-40" alt="Infosys" />
+            <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://hcl.com/" target="_blank">
-            <img src="assets/logos/logos_hcl.png" class="object-contain max-w-40" alt="HCL Technologies" />
+            <img src="assets/logos/logos_hcl.png" class="cpc-logo-cloud-img" alt="HCL Technologies" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.techmahindra.com" target="_blank">
-            <img src="assets/logos/logos_techmahindra.png" class="object-contain max-w-40" alt="Tech Mahindra" />
+            <img src="assets/logos/logos_techmahindra.png" class="cpc-logo-cloud-img" alt="Tech Mahindra" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
         </span>
 
         <!-- Duplicated set of logos for seamless looping -->
-        <span class="flex animate-slide group-hover:animate-paused items-center w-auto flex-shrink-0 py-2">
+        <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
           <a href="https://www.larsentoubro.com/" target="_blank">
-            <img src="assets/logos/logos_lnt.png" class="object-contain max-w-40" alt="L&T" />
+            <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.geminisolutions.com/" target="_blank">
-            <img src="assets/logos/logos_gemini.png" class="object-contain max-w-40" alt="Gemini Solutions" />
+            <img src="assets/logos/logos_gemini.png" class="cpc-logo-cloud-img" alt="Gemini Solutions" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.thermaxglobal.com/" target="_blank">
-            <img src="assets/logos/logos_thermax.png" class="object-contain max-w-40" alt="Thermax" />
+            <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.adani.com/" target="_blank">
-            <img src="assets/logos/logos_adani.png" class="object-contain max-w-40" alt="Adani Enterprises" />
+            <img src="assets/logos/logos_adani.png" class="cpc-logo-cloud-img" alt="Adani Enterprises" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.allstate.com" target="_blank">
-            <img src="assets/logos/logos_allstate.png" class="object-contain max-w-40" alt="Allstate" />
+            <img src="assets/logos/logos_allstate.png" class="cpc-logo-cloud-img" alt="Allstate" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.zaggle.in" target="_blank">
-            <img src="assets/logos/logos_zaggle.png" class="object-contain max-w-40" alt="Zaggle" />
+            <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.dhoottransmission.com/" target="_blank">
-            <img src="assets/logos/logos_dhoot.png" class="object-contain max-w-40" alt="Dhoot Transmission" />
+            <img src="assets/logos/logos_dhoot.png" class="cpc-logo-cloud-img" alt="Dhoot Transmission" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.tcs.com" target="_blank">
-            <img src="assets/logos/logos_tcs.png" class="object-contain max-w-40" alt="TCS" />
+            <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.alohatechnology.com/" target="_blank">
-            <img src="assets/logos/logos_aloha.png" class="object-contain max-w-40" alt="Aloha Technology" />
+            <img src="assets/logos/logos_aloha.png" class="cpc-logo-cloud-img" alt="Aloha Technology" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.mountblue.io/" target="_blank">
-            <img src="assets/logos/logos_mountblue.png" class="object-contain max-w-40" alt="MountBlue Technologies" />
+            <img src="assets/logos/logos_mountblue.png" class="cpc-logo-cloud-img" alt="MountBlue Technologies" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.revature.com" target="_blank">
-            <img src="assets/logos/logos_revature.png" class="object-contain max-w-40" alt="Revature" />
+            <img src="assets/logos/logos_revature.png" class="cpc-logo-cloud-img" alt="Revature" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.wipro.com" target="_blank">
-            <img src="assets/logos/logos_wipro.png" class="object-contain max-w-40" alt="Wipro" />
+            <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.infosys.com" target="_blank">
-            <img src="assets/logos/logos_infosys.png" class="object-contain max-w-40" alt="Infosys" />
+            <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://hcl.com/" target="_blank">
-            <img src="assets/logos/logos_hcl.png" class="object-contain max-w-40" alt="HCL Technologies" />
+            <img src="assets/logos/logos_hcl.png" class="cpc-logo-cloud-img" alt="HCL Technologies" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
+
 
           <a href="https://www.techmahindra.com" target="_blank">
-            <img src="assets/logos/logos_techmahindra.png" class="object-contain max-w-40" alt="Tech Mahindra" />
+            <img src="assets/logos/logos_techmahindra.png" class="cpc-logo-cloud-img" alt="Tech Mahindra" />
           </a>
-          <img src="assets/logos/logos_divider.png" class="object-contain w-10 p-2 mx-12" alt="Divider" />
+          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
         </span>
 
       </div>

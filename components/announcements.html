@@ -1,33 +1,31 @@
 <!-- Announcements Section -->
-<section
-    class="fixed right-0 top-1/4 h-3/5 w-80 sm:w-96 z-40 transform translate-x-full transition-transform duration-300"
-    id="announcement-container">
-
+<div class="cpc-announcement-wrapper">
+ 
     <!-- Announcements Button -->
-    <div id="announcement-btn"
-        class="absolute -left-12 top-1/2 transform -translate-y-1/2 bg-white text-blue-600 w-12 h-48 flex flex-col items-center justify-center cursor-pointer shadow-lg border-l-4 border-blue-500 transition-transform duration-300 hover:bg-blue-50">
+    <button id="announcement-btn" type="button" class="cpc-announcement-btn" data-bs-toggle="offcanvas"
+        data-bs-target="#announcement-sidebar" aria-controls="announcement-sidebar">
         <!-- Blinking Dot -->
-        <span
-            class="absolute top-0 mt-3 h-3 w-3 before:content-[''] before:absolute before:inset-0 before:rounded-full before:bg-red-500 before:opacity-75 before:animate-ping after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:h-2 after:w-2 after:rounded-full after:bg-red-600 after:transform after:-translate-x-1/2 after:-translate-y-1/2"></span>
-        <span class="text-xs font-semibold tracking-widest rotate-90 transform">ANNOUNCEMENTS</span>
+        <span class="cpc-announcement-dot"></span>
+        <span class="cpc-announcement-label">ANNOUNCEMENTS</span>
         <!-- Rotating Icon -->
-        <span class="absolute bottom-0 mb-3 h-5 w-5 grid place-items-center transition-transform duration-300 transform"
-            id="rotate-icon">
-            <i class="fas fa-chevron-left text-sm"></i>
+        <span class="cpc-announcement-icon" id="rotate-icon">
+            <i class="fas fa-chevron-left"></i>
         </span>
-    </div>
+    </button>
+</div>
 
-    <!-- Sliding Sidebar for Announcements -->
-    <div id="announcement-sidebar"
-        class="h-full w-full bg-white border-l-4 border-blue-500 text-gray-800 shadow-2xl overflow-y-auto">
-        <div class="px-6 pb-6">
-            <h2
-                class="text-2xl font-semibold border-b-2 border-b-slate-100 bg-white py-4 text-blue-600 mb-4 sticky top-0 z-50">
-                For Recruiters/Students</h2>
-            <ul id="announcement-list" class="space-y-4 text-gray-700">
+<!-- Sliding Sidebar for Announcements -->
+<div id="announcement-sidebar" class="offcanvas offcanvas-end cpc-announcement-offcanvas" tabindex="-1"
+    aria-labelledby="announcement-title" data-bs-backdrop="false" data-bs-scroll="true">
+    <div class="offcanvas-body p-0">
+        <div class="cpc-announcement-body">
+            <h2 id="announcement-title" class="cpc-announcement-title">
+                <span>For Recruiters/Students</span>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </h2>
+            <ul id="announcement-list" class="cpc-announcement-list">
                 <!-- Announcements will be dynamically populated here -->
             </ul>
         </div>
     </div>
-
-</section>
+</div>

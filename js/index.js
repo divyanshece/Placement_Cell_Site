@@ -67,8 +67,8 @@ async function loadData() {
 
             img.onload = () => {
                 // Hide all skeletons and show description when image loads
-                skeletons.forEach(skeleton => skeleton.classList.add('hidden'));
-                descriptionElement.classList.remove('hidden');
+                skeletons.forEach(skeleton => skeleton.classList.add('d-none'));
+                descriptionElement.classList.remove('d-none');
             };
         }
     });

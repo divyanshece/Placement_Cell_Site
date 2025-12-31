@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
+    "build": "node -e \"console.log('Tailwind build disabled during Bootstrap migration. Do not overwrite dist/output.css until conversion is complete.');\""
   },
   "keywords": [],
   "author": "",

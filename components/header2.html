@@ -1,89 +1,56 @@
-<header
-    class="flex justify-between items-center bg-blue-500 shadow-md sticky top-0 left-0 z-40 backdrop-blur-md h-16 max-w-screen-2xl mx-auto w-full px-4 lg:px-8">
-
-    <!-- Logo -->
-    <a href="./index.html" class="flex items-center gap-1 text-xl font-bold w-72 h-full text-white group">
-        <i class="fas fa-home mr-2 group-hover:text-gray-200"></i> CPC - GGV
-    </a>
-
-    <div class="flex gap-6 md:gap-10">
-        <!-- Hamburger Menu for Mobile -->
-        <div class="flex lg:hidden items-center">
-            <button id="menu-toggle" class="text-gray-200 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <!-- Navigation Links -->
-    <nav id="nav-links"
-        class="flex flex-col items-center max-h-0 lg:max-h-full lg:flex lg:flex-row lg:items-center lg:space-x-2 lg:h-full absolute top-16 left-0 w-full bg-gray-800 bg-opacity-95 lg:bg-opacity-90 shadow-md lg:relative lg:bg-transparent lg:shadow-none lg:top-0 lg:w-auto lg:translate-x-0 transition-all transform duration-500 ease-in-out overflow-hidden xl:overflow-visible">
-
-        <!-- Why Recruit with Dropdown -->
-        <div class="relative group h-full grid place-items-center">
-            <a href="./index.html#why-recruit" class="py-4 px-3 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-question-circle mr-2 group-hover:text-gray-200"></i> Why Recruit?
-                <i class="fas fa-caret-down ml-2 text-sm"></i>
-            </a>
-            <div
-                class="absolute left-0 top-full opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-500 flex flex-col bg-gray-900 text-white shadow-lg w-52 ml-20 sm:ml-0 z-50">
-                <a href="./demographics.html" class="px-5 py-3 hover:bg-gray-700">Demographics</a>
-            </div>
-        </div>
-
-        <!-- For Recruiters with Dropdown -->
-        <div class="relative group h-full grid place-items-center">
-            <a href="./for-recruiters.html" class="py-4 px-3 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-briefcase mr-2 group-hover:text-gray-200"></i> For Recruiters
-                <i class="fas fa-caret-down ml-2 text-sm"></i>
-            </a>
-            <div
-                class="absolute left-0 top-full opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-500 flex flex-col bg-gray-900 text-white shadow-lg w-52 ml-20 sm:ml-0 z-50">
-                <a href="https://forms.gle/hjZi6rxityPHLFAA7" target="_blank" class="px-5 py-3 hover:bg-gray-700">Job
-                    Invitation Form</a>
-                <a href="./for-recruiters.html#procedures" class="px-5 py-3 hover:bg-gray-700">Procedure & Policies</a>
-                <a href="./for-recruiters.html#brochure" class="px-5 py-3 hover:bg-gray-700">Placement Brochure</a>
-                <a href="./for-recruiters.html#facilities" class="px-5 py-3 hover:bg-gray-700">Facilities</a>
-                <a href="./for-recruiters.html#hotel-list" class="px-5 py-3 hover:bg-gray-700">Nearby Hotels</a>
-                <a href="./for-recruiters.html#faqs" class="px-5 py-3 hover:bg-gray-700">FAQs</a>
-            </div>
-        </div>
-
-        <!-- For Students with Dropdown -->
-        <div class="relative group h-full grid place-items-center">
-            <p class="cursor-pointer py-4 px-3 flex items-center text-white hover:text-gray-200 group">
-                <i class="fa-solid fa-user-graduate mr-2 group-hover:text-gray-200"></i> For Students
-                <i class="fas fa-caret-down ml-2 text-sm"></i>
-            </p>
-            <div
-                class="absolute left-0 top-full opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-500 flex flex-col bg-gray-900 text-white shadow-lg w-52 ml-20 sm:ml-0 z-50">
-                <a href="#" class="px-5 py-3 hover:bg-gray-700"
-                    onclick="alert('Job Application Form will be added soon...!');">Job Application Form</a>
-                <a href="https://docs.google.com/document/d/1settLyj84qGsQXi0j7b8jBS7x3d33bZc/export?format=pdf"
-                    class="px-5 py-3 hover:bg-gray-700">Procedure & Policies</a>
-            </div>
-        </div>
-
-        <!-- Student Team -->
-        <a href="./team.html" class="py-4 px-3 flex items-center text-white hover:text-gray-200 group">
-            <i class="fas fa-users mr-2 group-hover:text-gray-200"></i> Student Team
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top cpc-navbar cpc-max-w mx-auto">
+    <div class="container-fluid px-4 px-lg-8">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold cpc-navbar-brand" href="./index.html">
+            <i class="fas fa-home"></i>
+            CPC - GGV
         </a>
 
-        <!-- Contact Us with Dropdown -->
-        <div class="relative group h-full grid place-items-center">
-            <a href="./contact.html" class="py-4 px-3 flex items-center text-white hover:text-gray-200 group">
-                <i class="fas fa-envelope mr-2 group-hover:text-gray-200"></i> Contact Us
-                <i class="fas fa-caret-down ml-2 text-sm"></i>
-            </a>
-            <div
-                class="absolute left-0 top-full opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-500 flex flex-col bg-gray-900 text-white shadow-lg w-52 ml-20 sm:ml-0 z-50">
-                <a href="./contact.html#contacts" class="px-5 py-3 hover:bg-gray-700">Contacts</a>
-                <a href="./contact.html#reach-us" class="px-5 py-3 hover:bg-gray-700">Reach Us</a>
-            </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-links"
+            aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse bg-dark" id="nav-links">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="./demographics.html"><i class="fas fa-question-circle me-2"></i>Why Recruit?</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./for-recruiters.html" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-briefcase me-2"></i>For Recruiters
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark cpc-dropdown-menu">
+                        <li><a class="dropdown-item" href="./for-recruiters.html">Overview</a></li>
+                        <li><a class="dropdown-item" href="https://forms.gle/hjZi6rxityPHLFAA7" target="_blank">Job Invitation Form</a></li>
+                        <li><a class="dropdown-item" href="./for-recruiters.html#procedures">Procedure & Policies</a></li>
+                        <li><a class="dropdown-item" href="./for-recruiters.html#brochure">Placement Brochure</a></li>
+                        <li><a class="dropdown-item" href="./for-recruiters.html#facilities">Facilities</a></li>
+                        <li><a class="dropdown-item" href="./for-recruiters.html#hotel-list">Nearby Hotels</a></li>
+                        <li><a class="dropdown-item" href="./for-recruiters.html#faqs">FAQs</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-user-graduate me-2"></i>For Students
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark cpc-dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="alert('Job Application Form will be added soon...!');">Job Application Form</a></li>
+                        <li><a class="dropdown-item" href="https://docs.google.com/document/d/1settLyj84qGsQXi0j7b8jBS7x3d33bZc/export?format=pdf">Procedure & Policies</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./team.html"><i class="fas fa-users me-2"></i>Student Team</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html"><i class="fas fa-envelope me-2"></i>Contact Us</a>
+                </li>
+            </ul>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>

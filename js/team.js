@@ -13,15 +13,20 @@ function renderSkeletons(count) {
 
     // Create and append skeleton cards based on the count
     for (let i = 0; i < count; i++) {
+        const col = document.createElement('div');
+        col.className = 'col-12 col-sm-6 col-lg-4';
+
         const skeletonCard = document.createElement('div');
-        skeletonCard.className = "skeleton-card bg-gray-200 rounded-lg p-4 animate-pulse flex flex-col space-y-4";
+        skeletonCard.className = "skeleton-card bg-body-tertiary rounded p-4 cpc-announcement-skeleton d-flex flex-column gap-3";
         skeletonCard.innerHTML = `
-            <div class="h-6 bg-gray-300 rounded w-3/4"></div>
-            <div class="h-4 bg-gray-300 rounded w-1/2"></div>
-            <div class="h-4 bg-gray-300 rounded w-2/3"></div>
-            <div class="h-4 bg-gray-300 rounded w-1/4"></div>
+            <div class="bg-secondary-subtle rounded" style="height: 1.5rem; width: 75%;"></div>
+            <div class="bg-secondary-subtle rounded" style="height: 1rem; width: 50%;"></div>
+            <div class="bg-secondary-subtle rounded" style="height: 1rem; width: 66%;"></div>
+            <div class="bg-secondary-subtle rounded" style="height: 1rem; width: 25%;"></div>
         `;
-        tableBody.appendChild(skeletonCard);
+
+        col.appendChild(skeletonCard);
+        tableBody.appendChild(col);
     }
 }
 
@@ -101,17 +106,21 @@ function renderCards(data) {
     tableBody.innerHTML = '';
     data.forEach(student => {
         const card = `
-            <div class="bg-white shadow-md rounded-lg p-4">
-                <h3 class="text-lg font-semibold">${student.name}</h3>
-                <p class="text-sm text-gray-600">${student.designation}</p>
-                <p class="text-sm">${student.branch}</p>
-                <p class="text-sm">${student.course}, ${student.year} Year</p>
-                <a href="tel:${student.contact}" class="text-blue-600"><i class="fas fa-phone"></i> ${student.contact}</a>
-                <br>
-                <a href="mailto:${student.email}" class="text-blue-600"><i class="fas fa-envelope"></i> ${student.email}</a>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-semibold mb-1">${student.name}</h3>
+                        <p class="text-sm text-body-secondary mb-1">${student.designation}</p>
+                        <p class="text-sm mb-1">${student.branch}</p>
+                        <p class="text-sm mb-2">${student.course}, ${student.year} Year</p>
+                        <a href="tel:${student.contact}" class="link-primary text-decoration-none"><i class="fas fa-phone"></i> ${student.contact}</a>
+                        <br>
+                        <a href="mailto:${student.email}" class="link-primary text-decoration-none"><i class="fas fa-envelope"></i> ${student.email}</a>
+                    </div>
+                </div>
             </div>
         `;
-        tableBody.innerHTML += card;
+        tableBody.insertAdjacentHTML('beforeend', card);
     });
 }
 
@@ -142,7 +151,7 @@ function updatePaginationNumbers() {
     for (let i = 1; i <= totalPages; i++) {
         const pageButton = document.createElement('button');
         pageButton.textContent = i;
-        pageButton.className = `px-3 py-1 rounded border border-blue-600 ${i === currentPage ? 'bg-blue-600 text-white' : 'bg-white text-blue-600'}`;
+        pageButton.className = `btn btn-sm ${i === currentPage ? 'btn-primary' : 'btn-outline-primary'} me-1 mb-1`;
         pageButton.addEventListener('click', () => {
             currentPage = i;
             renderPaginatedData();

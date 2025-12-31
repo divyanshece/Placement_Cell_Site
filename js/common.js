@@ -1,14 +1,29 @@
-window.addEventListener("load", function () {
+let preloaderHidden = false;
+
+function hidePreloader() {
+    if (preloaderHidden) return;
     const preloader = document.getElementById("preloader");
+    if (!preloader) return;
+
+    preloaderHidden = true;
+    preloader.style.pointerEvents = "none";
     preloader.classList.add("opacity-0");
     setTimeout(() => {
         preloader.style.display = "none";
     }, 500);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(hidePreloader, 1500);
 });
 
-AOS.init({
-    duration: 1000,
-});
+window.addEventListener("load", hidePreloader);
+
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 1000,
+    });
+}
 
 async function loadComponent(component, filePath) {
     const response = await fetch(filePath);
@@ -21,7 +36,7 @@ async function loadComponent(component, filePath) {
         console.warn(`Element with ID '${component}' not found. Skipping load for '${filePath}'.`);
     }
 
-    return content; // Return content to ensure the component is loaded
+    return content;
 }
 
 // Load header and footer
@@ -31,44 +46,89 @@ Promise.all([
     loadComponent('footer', './components/footer.html'),
     loadComponent('announcements', './components/announcements.html')
 ]).then(() => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    // Ensure Bootstrap dropdowns work
+    document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach((toggle) => {
+        if (window.bootstrap?.Dropdown) {
+            bootstrap.Dropdown.getOrCreateInstance(toggle);
+        }
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('max-h-[1000px]');
-            navLinks.classList.toggle("overflow-hidden");
+        toggle.addEventListener('click', (e) => {
+            const href = toggle.getAttribute('href');
+            if (href && href !== '#' && href !== '') e.preventDefault();
         });
-    } else {
-        console.error("Menu toggle or navigation links not found.");
+    });
+
+    // Header2: open dropdowns on hover (desktop only)
+    const header2 = document.getElementById('header2');
+    const isDesktop = () => window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+
+    if (header2 && window.bootstrap?.Dropdown) {
+        header2.querySelectorAll('.dropdown').forEach((dropdown) => {
+            const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (!toggle || !menu) return;
+
+            const instance = bootstrap.Dropdown.getOrCreateInstance(toggle);
+            let hideTimer;
+
+            const clearHideTimer = () => {
+                if (hideTimer) {
+                    clearTimeout(hideTimer);
+                    hideTimer = undefined;
+                }
+            };
+
+            const scheduleHide = () => {
+                clearHideTimer();
+                hideTimer = setTimeout(() => {
+                    if (isDesktop()) instance.hide();
+                }, 120);
+            };
+
+            dropdown.addEventListener('mouseenter', () => {
+                if (!isDesktop()) return;
+                clearHideTimer();
+                instance.show();
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                if (!isDesktop()) return;
+                scheduleHide();
+            });
+
+            menu.addEventListener('mouseenter', () => {
+                if (!isDesktop()) return;
+                clearHideTimer();
+            });
+
+            menu.addEventListener('mouseleave', () => {
+                if (!isDesktop()) return;
+                scheduleHide();
+            });
+        });
     }
 
     // Elements for announcements
-    const announcementContainer = document.getElementById("announcement-container");
-    const announcementBtn = document.getElementById("announcement-btn");
     const rotateIcon = document.getElementById("rotate-icon");
     const announcementList = document.getElementById("announcement-list");
-    let sectionOpen = false;
+    const announcementSidebar = document.getElementById("announcement-sidebar");
+    const announcementBtn = document.getElementById("announcement-btn");
 
-    // Toggle functionality
-    announcementBtn.addEventListener("click", () => {
-        announcementContainer.classList.toggle("translate-x-full");
-        rotateIcon.classList.toggle("rotate-180");
-        sectionOpen = !sectionOpen;
-        if (sectionOpen) fetchAnnouncements(); // Fetch announcements when section is opened
-    });
+    let announcementsLoaded = false;
 
     // Function to render skeleton placeholders
     function renderAnnouncementSkeletons(count) {
-        announcementList.innerHTML = ''; // Clear existing content
+        if (!announcementList) return;
+
+        announcementList.innerHTML = '';
         for (let i = 0; i < count; i++) {
             const skeletonItem = document.createElement("li");
-            skeletonItem.className = "relative flex justify-start items-start space-x-3 pb-4 border-b-2 border-slate-100 animate-pulse";
+            skeletonItem.className = "cpc-announcement-item cpc-announcement-skeleton";
             skeletonItem.innerHTML = `
-                <i class="fas fa-bullhorn text-gray-300 mr-2"></i>
-                <div class="flex flex-col space-y-2">
-                    <div class="w-16 h-3 bg-gray-300 rounded"></div>
-                    <div class="w-40 h-4 bg-gray-300 rounded"></div>
+                <i class="fas fa-bullhorn cpc-skeleton-icon"></i>
+                <div class="cpc-announcement-item-text">
+                    <div class="cpc-skeleton-line cpc-skeleton-line-sm"></div>
+                    <div class="cpc-skeleton-line cpc-skeleton-line-md"></div>
                 </div>
             `;
             announcementList.appendChild(skeletonItem);
@@ -77,6 +137,8 @@ Promise.all([
 
     // Fetch announcements with 3-hour caching
     async function fetchAnnouncements() {
+        if (announcementsLoaded) return;
+
         const cacheKey = 'announcementData';
         const cacheExpiryKey = 'announcementDataExpiry';
         const cacheDuration = 3 * 60 * 60 * 1000; // 3 hours
@@ -88,17 +150,14 @@ Promise.all([
 
         let data;
         if (cachedData && cacheExpiry && now < cacheExpiry) {
-            // Use cached data if it hasn't expired
             data = JSON.parse(cachedData);
         } else {
             try {
-                // Render skeletons while loading
                 renderAnnouncementSkeletons(5);
 
                 const response = await fetch("https://script.google.com/macros/s/AKfycbw6I1F4Rl5j77EwE6r8mzOUyUlZoupvXHrLSy3ro28RZCW1HVUfd_mKUozqtkWA9bfPLg/exec?announcements=true");
                 data = await response.json();
 
-                // Cache the data and set expiration
                 localStorage.setItem(cacheKey, JSON.stringify(data));
                 localStorage.setItem(cacheExpiryKey, now + cacheDuration);
             } catch (error) {
@@ -107,24 +166,38 @@ Promise.all([
             }
         }
 
-        // Clear skeletons and populate announcements
+        if (!announcementList) return;
+
         announcementList.innerHTML = "";
         data.data.forEach(item => {
             const date = new Date(item.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
             const announcementText = item.Announcement;
 
-            // Create announcement item
             const announcementItem = document.createElement("li");
-            announcementItem.classList.add("relative", "flex", "justify-start", "items-start", "space-x-3", "pb-4", "border-b-2", "border-slate-100");
+            announcementItem.classList.add("cpc-announcement-item");
             announcementItem.innerHTML = `
-                <i class="fas fa-bullhorn text-blue-500 mr-2"></i>
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-500 hyphens-auto">${date}</p>
-                    <p class="hyphens-auto">${announcementText}</p>
+                <i class="fas fa-bullhorn text-primary me-2"></i>
+                <div class="cpc-announcement-item-text">
+                    <p class="cpc-announcement-date">${date}</p>
+                    <p class="mb-0">${announcementText}</p>
                 </div>
-                <img src="assets/new.gif" alt="New" class="absolute -top-1 right-1 w-9 h-5">
+                <img src="assets/new.gif" alt="New" class="cpc-announcement-new" />
             `;
             announcementList.appendChild(announcementItem);
+        });
+
+        announcementsLoaded = true;
+    }
+
+    // Handle offcanvas events
+    if (announcementSidebar) {
+        announcementSidebar.addEventListener('show.bs.offcanvas', () => {
+            if (rotateIcon) rotateIcon.classList.add('rotate-180');
+            if (announcementList) fetchAnnouncements();
+        });
+
+        announcementSidebar.addEventListener('hidden.bs.offcanvas', () => {
+            if (rotateIcon) rotateIcon.classList.remove('rotate-180');
         });
     }
 

@@ -254,7 +254,7 @@ function updateGenderDistribution(branchName, data) {
     // Update the title
     document.getElementById('chart-title').textContent = `Gender Distribution for ${branchName}`;
 
-    // Show the "Back to Branch" button
+    // Show the "Back to Branch" button (Bootstrap uses 'd-none' instead of 'hidden')
     document.getElementById('backToBranchBtn').classList.remove('hidden');
 
     // Update state to indicate gender distribution
@@ -274,7 +274,7 @@ function resetBranchChart() {
     // Update the title
     document.getElementById('chart-title').textContent = 'Branch Distribution';
 
-    // Hide the "Back to Branch" button
+    // Hide the "Back to Branch" button (Bootstrap uses 'd-none' instead of 'hidden')
     document.getElementById('backToBranchBtn').classList.add('hidden');
 
     // Reset the selected branch and index
@@ -323,7 +323,7 @@ function initializeEmployers(data) {
         letters.forEach((letter, index) => {
             const button = document.createElement('button');
             button.textContent = letter;
-            button.className = 'bg-teal-600 hover:bg-teal-700 hover:underline text-white font-bold py-2 px-4 rounded w-12 h-12 flex items-center justify-center transition-transform transform';
+            button.className = 'alphabet-btn';
 
             button.addEventListener('click', () => displayEmployersByLetter(letter, button));
 
