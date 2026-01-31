@@ -4,334 +4,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOSET - Demographics</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/output.css" />
+    <title>GGV - Demographics</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./cdns/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="./cdns/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./cdns/aos/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./input.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./cdns/swiper/swiper-bundle.js" defer></script>
+    <script src="./cdns/chart/chart.js" defer></script>
+    <script src="./cdns/aos/aos.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/demographics.js" defer></script>
 </head>
 
-<body class="bg-gray-100">
+<body>
 
-    <header id="header1" class="z-40"></header>
-    <header id="header2" class=" sticky top-0 left-0 z-40"></header>
+    <header id="header1" style="z-index: 40;"></header>
+    <header id="header2" class="sticky-top sticky-top-0" style="z-index: 40;"></header>
 
-    <div class="flex flex-col md:flex-row max-w-screen-2xl w-full mx-auto">
-        <aside class="bg-gray-800 w-full md:w-1/5 sticky top-16 p-4 h-auto md:h-screen overflow-y-auto">
-            <nav class="flex flex-col space-y-4">
-                <a href="#overview" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
-                    <i class="fas fa-chart-pie mr-2"></i>Overview</a>
-                <a href="#placement-stats" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
-                    <i class="fas fa-briefcase mr-2"></i>Placement Stats</a>
-                <a href="#branch-distribution" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
-                    <i class="fas fa-sitemap mr-2"></i>Branch Distribution</a>
-                <a href="#alumi-placements" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
-                    <i class="fas fa-building mr-2"></i>Alumni Placements</a>
-                <a href="#alumi-spotlight" class="text-white hover:bg-blue-500 p-3 rounded-md flex items-center">
-                    <i class="fas fa-star mr-2"></i>Alumni Spotlight</a>
-            </nav>
-        </aside>
+    <section id="announcements"></section>
 
-        <main class="w-full md:w-4/5 p-6 space-y-6 bg-gray-50">
+    <div class="container-fluid main-container" style="max-width: 1536px;">
+        <div class="row g-0">
+            <!-- Sidebar -->
+            <aside
+                class="col-12 col-md-auto sidebar-col bg-gray-800 sticky-top-custom p-0 p-sm-4 max-h-screen overflow-y-auto d-none d-md-block sidebar-nav"
+                data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200"
+                data-aos-once="true">
+                <nav class="d-flex flex-column gap-3">
+                    <a href="#overview" class="text-white text-decoration-none p-3 rounded d-flex align-items-center"
+                        data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-aos-once="true">
+                        <i class="fas fa-chart-pie me-2"></i>Overview
+                    </a>
+                    <a href="#placement-stats"
+                        class="text-white text-decoration-none p-3 rounded d-flex align-items-center" data-aos="zoom-in"
+                        data-aos-duration="700" data-aos-delay="600" data-aos-once="true">
+                        <i class="fas fa-briefcase me-2"></i>Placement Stats
+                    </a>
+                    <a href="#branch-distribution"
+                        class="text-white text-decoration-none p-3 rounded d-flex align-items-center" data-aos="zoom-in"
+                        data-aos-duration="700" data-aos-delay="700" data-aos-once="true">
+                        <i class="fas fa-sitemap me-2"></i>Branch Distribution
+                    </a>
+                    <a href="#alumi-placements"
+                        class="text-white text-decoration-none p-3 rounded d-flex align-items-center" data-aos="zoom-in"
+                        data-aos-duration="700" data-aos-delay="800" data-aos-once="true">
+                        <i class="fas fa-building me-2"></i>Alumni Placements
+                    </a>
+                    <a href="#alumi-spotlight"
+                        class="text-white text-decoration-none p-3 rounded d-flex align-items-center" data-aos="zoom-in"
+                        data-aos-duration="700" data-aos-delay="900" data-aos-once="true">
+                        <i class="fas fa-star me-2"></i>Alumni Spotlight
+                    </a>
+                </nav>
+            </aside>
 
-            <!-- Overview/Top Stats Section -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="overview">
-                <div
-                    class="flex items-center justify-between bg-white text-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-user-graduate text-4xl text-teal-600"></i>
-                    <div class="text-right">
-                        <h4 class="text-md font-semibold">Total Students</h4>
-                        <p class="text-2xl font-bold">2,356</p>
-                    </div>
-                </div>
-                <div
-                    class="flex items-center justify-between bg-white text-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-venus-mars text-4xl text-teal-600"></i>
-                    <div class="text-right">
-                        <h4 class="text-md font-semibold">Male/Female Ratio</h4>
-                        <p class="text-2xl font-bold">60% / 40%</p>
-                    </div>
-                </div>
-                <div
-                    class="flex items-center justify-between bg-white text-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-briefcase text-4xl text-teal-600"></i>
-                    <div class="text-right">
-                        <h4 class="text-md font-semibold">Placement Rate</h4>
-                        <p class="text-2xl font-bold">85%</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Main Content -->
+            <main class="col-12 col-md main-col p-4 bg-gray-100">
 
-
-            <!-- Demographics Overview Section -->
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h2 class="text-2xl font-semibold text-teal-800 mb-4">Demographics Overview</h2>
-                <p class="text-gray-600">Guru Ghasidas Vishwavidyalaya has a diverse student population, with over
-                    2,356 students enrolled across various disciplines. The gender distribution reveals a 60:40
-                    ratio of male to female students, reflecting a balanced representation. The university has
-                    consistently maintained a strong placement rate of 85%, with students excelling in various
-                    technical and managerial roles. Our year-on-year admission trend shows a steady increase in
-                    enrollments, emphasizing the growing demand for quality education at the university.</p>
-            </div>
-
-
-            <!-- Placement Stats Chart Section-->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="placement-stats">
-                <!-- Yearly Placement Chart -->
-                <div id="admission-trend">
-                    <h3 class="text-lg font-semibold text-teal-800 mb-2 text-center">Yearly Placement</h3>
-                    <div class="bg-white p-4 shadow-lg rounded-lg">
-                        <canvas id="admissionChart" class="w-full h-[300px]"></canvas>
-                    </div>
-                </div>
-
-                <!-- Placement Stats Chart -->
-                <div>
-                    <h3 class="text-lg font-semibold text-teal-800 mb-2 text-center">Placement Stats</h3>
-                    <div class="bg-white p-4 shadow-lg rounded-lg">
-                        <canvas id="placementChart" class="w-full h-[300px]"></canvas>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Branch/Gender Distribution Chart Section-->
-            <div id="branch-distribution" class="mt-6 h-auto w-full">
-                <h3 id="chart-title" class="text-lg font-semibold text-teal-800 mb-2 text-center">Branch/Gender
-                    Distribution</h3>
-                <div class="bg-white p-4 shadow-lg rounded-lg h-auto w-full">
-
-                    <!-- removing this wrapper div is causing the chart to grow anomalously -->
-                    <div><canvas id="branchChart" class="w-full h-[300px]"></canvas></div>
-
-                    <!-- Info Section below the chart -->
-                    <div class="flex justify-between bg-blue-100 rounded-lg p-1 pl-5 mt-2 h-12 w-full">
-                        <div class="text-blue-800 flex items-center ">
-                            <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                            <p class=" font-semibold">Click branch to know its gender distribution</p>
-                        </div>
-                        <button id="backToBranchBtn" class="bg-teal-800 text-white px-4 py-2 rounded-lg hidden"
-                            onclick="resetBranchChart()">Back to Branch</button>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- Alumni Placements Section: Our Esteemed Alumni Are Placed in These Companies -->
-            <div id="alumi-placements" class="bg-white p-6 shadow-lg rounded-lg mt-6 mx-auto w-full overflow-hidden">
-                <h2 class="text-2xl font-semibold text-teal-800 mb-4">Our Esteemed Alumni Are Placed in These
-                    Companies
-                </h2>
-                <p class="text-gray-600 mb-4">Explore the remarkable achievements of our alumni, who have secured
-                    impactful roles in over 150 of the world’s leading companies, including top <b>Fortune 500</b>
-                    giants like
-                    <b>Google, Amazon, Facebook, Microsoft,</b> and <b>Apple.</b> Our graduates have left their mark
-                    across
-                    industries
-                    ranging from technology and finance to healthcare and consulting, contributing to the success of
-                    companies like <b>JP-Morgan Chase, Deloitte,</b> and <b>Goldman Sachs.</b>
-                </p>
-                <p class="text-gray-600 mb-4">
-                    With representation in more than 25
-                    countries globally, our alumni network spans across high-growth startups and established
-                    industry
-                    leaders alike. Their contributions continue to shape innovation, strategy, and leadership in
-                    today's
-                    most influential organizations.</p>
-                <div class="space-y-4">
-                    <div class="flex flex-wrap gap-2" id="alphabetButtonsContainer">
-                        <!-- Alphabet buttons will be dynamically generated here -->
-                    </div>
-
-                    <!-- Employers Display Area -->
-                    <div id="employersDisplay" class="bg-gray-100 p-4 mt-4 rounded-lg">
-                        <h3 id="employerLetterTitle" class="text-lg font-semibold text-teal-800 mb-2">Employers
-                            Starting
-                            With "A"</h3>
-                        <ul id="employersList" class="list-disc pl-5 text-gray-700">
-                            <!-- Dynamically populated employers list will be inserted here via JavaScript -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Alumni Spotlight Section: Meet Our Esteemed Alumni Section -->
-            <div class="bg-white p-6 shadow-lg rounded-lg mt-6 mx-auto w-full h-auto relative" id="alumi-spotlight">
-                <h2 class="text-2xl font-semibold text-teal-800 mb-4">Meet Some of Our Esteemed Alumni</h2>
-                <p class="text-gray-600 mb-4">Get to know some of our remarkable alumni and their career
-                    accomplishments. Connect with them on LinkedIn to follow their journey.</p>
-
-                <div class="relative pb-4">
-                    <!-- Swiper Slider Container -->
-                    <div class="swiper-container overflow-hidden">
-                        <div class="swiper-wrapper">
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 1</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Senior Software Engineer at XYZ Corp</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 2</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Data Analyst at ABC Ltd</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 3</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Marketing Manager at 123 Inc</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 4 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 4</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Product Manager at DEF Co.</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 5 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 5</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">HR Manager at GHI Enterprises</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 6 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 6</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">CEO at JKL Ventures</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 7 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 7</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Operations Manager at MNO Logistics</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 8 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 w-full max-w-sm mx-auto h-72 flex flex-col justify-center items-center">
-                                    <div
-                                        class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 border">
-                                        <img src="https://via.placeholder.com/150" alt="Alumni 1"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-teal-800">Alumni Name 8</h3>
-                                    <p class="text-gray-600 mt-1 mb-2">Chief Financial Officer at PQR Holdings</p>
-                                    <a href="https://linkedin.com"
-                                        class="inline-block text-teal-500 hover:text-teal-700 transition-colors duration-200">
-                                        <i class="fab fa-linkedin fa-lg"></i>
-                                    </a>
+                <!-- Overview/Top Stats Section -->
+                <div class="row g-4 mb-4" id="overview">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card border-0 shadow-sm stat-card hover-shadow-xl h-100" data-aos="zoom-in"
+                            data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+                            <div class="card-body d-flex align-items-center justify-content-between p-4">
+                                <i class="fas fa-user-graduate text-teal-600" style="font-size: 2.5rem;"></i>
+                                <div class="text-end">
+                                    <h4 class="card-title h6 fw-semibold mb-2">Total Students</h4>
+                                    <p class="card-text fs-3 fw-bold mb-0">2,356</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Swiper navigation buttons -->
-                    <!-- <div
-                        class="swiper-button-next text-teal-700 text-opacity-30 hover:text-opacity-60 absolute top-1/2 -right-3 transform -translate-y-1/2">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card border-0 shadow-sm stat-card hover-shadow-xl h-100" data-aos="zoom-in"
+                            data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="100">
+                            <div class="card-body d-flex align-items-center justify-content-between p-4">
+                                <i class="fas fa-venus-mars text-teal-600" style="font-size: 2.5rem;"></i>
+                                <div class="text-end">
+                                    <h4 class="card-title h6 fw-semibold mb-2">Male/Female Ratio</h4>
+                                    <p class="card-text fs-3 fw-bold mb-0">60% / 40%</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div
-                        class="swiper-button-prev text-teal-700 text-opacity-30 hover:text-opacity-60 absolute top-1/2 -left-3 transform -translate-y-1/2">
-                    </div> -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card border-0 shadow-sm stat-card hover-shadow-xl h-100" data-aos="zoom-in"
+                            data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="200">
+                            <div class="card-body d-flex align-items-center justify-content-between p-4">
+                                <i class="fas fa-briefcase text-teal-600" style="font-size: 2.5rem;"></i>
+                                <div class="text-end">
+                                    <h4 class="card-title h6 fw-semibold mb-2">Placement Rate</h4>
+                                    <p class="card-text fs-3 fw-bold mb-0">85%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Swiper pagination (dots) -->
-                <div class="swiper-pagination absolute bottom-0"></div>
-            </div>
 
-        </main>
+                <!-- Demographics Overview Section -->
+                <div class="card border-0 shadow-lg mb-4" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-easing="ease-in-sine" data-aos-delay="200">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 fw-semibold text-teal-800 mb-3">Demographics Overview</h2>
+                        <p class="card-text text-gray-600">Guru Ghasidas Vishwavidyalaya has a diverse student
+                            population, with over
+                            2,356 students enrolled across various disciplines. The gender distribution reveals a 60:40
+                            ratio of male to female students, reflecting a balanced representation. The university has
+                            consistently maintained a strong placement rate of 85%, with students excelling in various
+                            technical and managerial roles. Our year-on-year admission trend shows a steady increase in
+                            enrollments, emphasizing the growing demand for quality education at the university.</p>
+                    </div>
+                </div>
+
+                <!-- Placement Stats Chart Section-->
+                <div class="row g-4 mb-4" id="placement-stats">
+                    <!-- Yearly Placement Chart -->
+                    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-easing="ease-in-out" data-aos-delay="400">
+                        <h3 class="h5 fw-semibold text-teal-800 mb-3 text-center">Yearly Placement</h3>
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body p-3">
+                                <canvas id="admissionChart" class="w-100 chart-container"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placement Stats Chart -->
+                    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-easing="ease-in-out" data-aos-delay="600">
+                        <h3 class="h5 fw-semibold text-teal-800 mb-3 text-center">Placement Stats</h3>
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body p-3">
+                                <canvas id="placementChart" class="w-100 chart-container"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch/Gender Distribution Chart Section-->
+                <div id="branch-distribution" class="mb-4" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-easing="ease-in-out" data-aos-delay="600">
+                    <h3 id="chart-title" class="h5 fw-semibold text-teal-800 mb-3 text-center">Branch/Gender
+                        Distribution</h3>
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-3">
+                            <div>
+                                <canvas id="branchChart" class="w-100 chart-container" data-aos="zoom-in"
+                                    data-aos-duration="1000" data-aos-easing="ease-in-out"
+                                    data-aos-delay="400"></canvas>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center bg-blue-100 rounded p-3 mt-3"
+                                data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+                                <div class="text-blue-800 d-flex align-items-center">
+                                    <i class="fas fa-info-circle text-blue-500 me-2"></i>
+                                    <p class="fw-semibold mb-0">Click branch for gender data</p>
+                                </div>
+                                <button id="backToBranchBtn" class="btn bg-teal-800 text-white px-3 py-2 rounded hidden"
+                                    onclick="resetBranchChart()">
+                                    <i class="fa-solid fa-circle-left"></i>
+                                    <span class="d-none d-sm-inline ms-1">Back to Branch</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni Placements Section -->
+                <div id="alumi-placements" class="card border-0 shadow-lg mb-4 overflow-hidden" data-aos="fade-up"
+                    data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 fw-semibold text-teal-800 mb-3">Our Esteemed Alumni Are Placed in These
+                            Companies</h2>
+
+                        <p class="card-text text-gray-600 mb-3" data-aos="fade-up" data-aos-delay="200">Explore the
+                            remarkable
+                            achievements of our alumni, who have secured impactful roles in over 150 of the world's
+                            leading companies, including top <b>Fortune 500</b>
+                            giants like <b>Google, Amazon, Facebook, Microsoft,</b> and <b>Apple.</b> Our graduates have
+                            left their mark
+                            across industries ranging from technology and finance to healthcare and consulting,
+                            contributing to the success of
+                            companies like <b>JP-Morgan Chase, Deloitte,</b> and <b>Goldman Sachs.</b>
+                        </p>
+                        <p class="card-text text-gray-600 mb-3" data-aos="fade-up" data-aos-delay="200">
+                            With representation in more than 25 countries globally, our alumni network spans across
+                            high-growth startups and established
+                            industry leaders alike. Their contributions continue to shape innovation, strategy, and
+                            leadership in
+                            today's most influential organizations.</p>
+
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <div class="d-flex flex-wrap gap-2 mb-3" id="alphabetButtonsContainer" data-aos="fade-up"
+                                data-aos-delay="500">
+                                <!-- Alphabet buttons will be dynamically generated here -->
+                            </div>
+
+                            <!-- Employers Display Area -->
+                            <div id="employersDisplay" class="bg-gray-100 p-3 rounded" data-aos="fade-up"
+                                data-aos-delay="600">
+                                <h3 id="employerLetterTitle" class="h5 fw-semibold text-teal-800 mb-3">Employers
+                                    Starting With "A"</h3>
+                                <ul id="employersList" class="text-gray-700">
+                                    <!-- Dynamically populated employers list will be inserted here via JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni Spotlight Section -->
+                <div class="card border-0 shadow-lg mb-4 position-relative" id="alumi-spotlight" data-aos="fade-up"
+                    data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 fw-semibold text-teal-800 mb-3">Meet Some of Our Esteemed Alumni</h2>
+                        <p class="card-text text-gray-600 mb-4">Discover the remarkable journeys of our esteemed alumni
+                            and delve into
+                            their inspiring career paths and notable accomplishments that showcase their dedication and
+                            success.
+                        </p>
+
+                        <div class="position-relative pb-4">
+                            <div class="swiper-container overflow-hidden">
+                                <div class="swiper-wrapper" id="alumni-swiper-wrapper">
+
+                                    <!-- Alumni 1 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alumni 2 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alumni 3 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alumni 4 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alumni 5 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alumni 6 -->
+                                    <div class="swiper-slide">
+                                        <div class="bg-gray-100 p-4 rounded text-center shadow-sm alumni-card d-flex flex-column justify-content-center align-items-center mx-auto"
+                                            style="max-width: 384px;">
+                                            <div
+                                                class="alumni-img-wrapper mx-auto mb-3 rounded-circle overflow-hidden border">
+                                                <div class="bg-secondary skeleton w-100 h-100"></div>
+                                                <img src="" alt="" class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <h3 class="h5 fw-semibold text-teal-800 alumni-name">_____ _____</h3>
+                                            <p class="text-gray-600 mb-2 alumni-desc">___ __ ___ ______</p>
+                                            <a href="#" target="_blank"
+                                                class="text-teal-500 hover-text-teal text-decoration-none alumni-link">
+                                                <i class="fab fa-linkedin fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination position-absolute bottom-0"></div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/demographics.js"></script>
+    <footer id="footer"></footer>
 </body>
 
 </html>

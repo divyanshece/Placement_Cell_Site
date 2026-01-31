@@ -4,12 +4,13 @@ fetch('data/demographics.json')
     .then(data => {
         initializeCharts(data); // Pass the data to initialize charts
         initializeEmployers(data); // Pass the data to initialize employers
+        initializeAlumni(data); // Pass the data to initialize alumni
     })
     .catch(error => console.error('Error fetching demographics data:', error));
 
 
 
-    
+
 var branchChart;
 var branchLabels;
 var branchDistributionData;
@@ -253,7 +254,7 @@ function updateGenderDistribution(branchName, data) {
     // Update the title
     document.getElementById('chart-title').textContent = `Gender Distribution for ${branchName}`;
 
-    // Show the "Back to Branch" button
+    // Show the "Back to Branch" button (Bootstrap uses 'd-none' instead of 'hidden')
     document.getElementById('backToBranchBtn').classList.remove('hidden');
 
     // Update state to indicate gender distribution
@@ -273,7 +274,7 @@ function resetBranchChart() {
     // Update the title
     document.getElementById('chart-title').textContent = 'Branch Distribution';
 
-    // Hide the "Back to Branch" button
+    // Hide the "Back to Branch" button (Bootstrap uses 'd-none' instead of 'hidden')
     document.getElementById('backToBranchBtn').classList.add('hidden');
 
     // Reset the selected branch and index
@@ -322,7 +323,7 @@ function initializeEmployers(data) {
         letters.forEach((letter, index) => {
             const button = document.createElement('button');
             button.textContent = letter;
-            button.className = 'bg-teal-600 hover:bg-teal-700 hover:underline text-white font-bold py-2 px-4 rounded w-12 h-12 flex items-center justify-center transition-transform transform';
+            button.className = 'alphabet-btn';
 
             button.addEventListener('click', () => displayEmployersByLetter(letter, button));
 
@@ -342,34 +343,62 @@ function initializeEmployers(data) {
 
 
 
+// Function to initialize the Alumni list
+function initializeAlumni(data) {
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
 
+    try {
+        const slides = document.querySelectorAll('.swiper-slide');
+        // Populate each slide with corresponding alumni data
+        data.alumni.forEach((alum, index) => {
+            if (slides[index]) {
+                const skeleton = slides[index].querySelector('.skeleton');
+                const img = slides[index].querySelector('img');
 
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    // navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    // },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    },
-});
+                img.src = alum.img;
+                img.onload = () => skeleton.classList.add('hidden');  // remove the skeleton, when the image is loaded
+
+                slides[index].querySelector('.alumni-name').textContent = alum.name;
+                slides[index].querySelector('.alumni-desc').textContent = alum.desc;
+                const linkedInLink = slides[index].querySelector('.alumni-link');
+                if (alum.linkedin) {
+                    linkedInLink.href = alum.linkedin;
+                    linkedInLink.style.display = 'inline-block';
+                } else {
+                    linkedInLink.style.display = 'none';
+                }
+            }
+        });
+    }
+    catch (error) {
+        console.error('Error loading alumni data:', error);
+    }
+}

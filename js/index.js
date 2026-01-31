@@ -1,71 +1,88 @@
-// AOS.init({
-//     duration: 1000,
-// });
-
 async function loadData() {
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbyrXCMRCX3oAB1vKyy2uOuEw3Za8l374I4x6tYvL3eG2wSTUXT9wpQ22E6uDg_5HCg8/exec';
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbw6I1F4Rl5j77EwE6r8mzOUyUlZoupvXHrLSy3ro28RZCW1HVUfd_mKUozqtkWA9bfPLg/exec?achievements=true';
+    const cacheKey = 'achievementData';
+    const cacheExpiryKey = 'achievementDataExpiry';
+    const cacheDuration = 3 * 60 * 60 * 1000; // 3 hours
 
-    try {
-        // Fetch data from the API
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+    // Initialize Swiper before data is loaded
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+            480: { slidesPerView: 2, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 20 },
+            1024: { slidesPerView: 4, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+            1536: { slidesPerView: 5, spaceBetween: 24 },
+        },
+    });
 
-        // Select all hardcoded slides
-        const slides = document.querySelectorAll('.swiper-slide');
+    // Pause autoplay on hover
+    const swiperContainer = document.querySelector('.swiper-container');
+    swiperContainer.addEventListener('mouseenter', () => swiper.autoplay.stop());
+    swiperContainer.addEventListener('mouseleave', () => swiper.autoplay.start());
 
-        // Loop through each slide and corresponding data item
-        data.data.forEach((item, index) => {
-            if (index < slides.length) { // Ensure we don't exceed available slides
-                const slide = slides[index];
-                const img = slide.querySelector('img');
-                const skeleton = slide.querySelector('.skeleton');
+    // Check if cached data exists and is still valid
+    const cachedData = localStorage.getItem(cacheKey);
+    const cacheExpiry = localStorage.getItem(cacheExpiryKey);
+    const now = new Date().getTime();
 
-                // Update the slide's image source, alt text, and title with data from API
-                img.src = item['Image Link'];
-                img.alt = item['Short Desc'];
-                slide.title = item['Short Desc'];
-
-                // Once the image loads, remove the skeleton and show the image
-                img.onload = () => {
-                    skeleton.classList.add('hidden');  // Hide skeleton
-                    img.classList.remove('hidden');    // Show image
-                };
-            }
-        });
-
-        // Initialize Swiper after data is loaded
-        new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 8,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                480: { slidesPerView: 2, spaceBetween: 10 },
-                640: { slidesPerView: 2, spaceBetween: 12 },
-                768: { slidesPerView: 3, spaceBetween: 15 },
-                1024: { slidesPerView: 4, spaceBetween: 18 },
-                1280: { slidesPerView: 4, spaceBetween: 20 },
-                1536: { slidesPerView: 5, spaceBetween: 24 },
-            },
-        });
-
-    } catch (error) {
-        console.error('Error loading data:', error);
+    let data;
+    if (cachedData && cacheExpiry && now < cacheExpiry) {
+        data = JSON.parse(cachedData);
+    } else {
+        try {
+            const response = await fetch(apiUrl);
+            data = await response.json();
+            localStorage.setItem(cacheKey, JSON.stringify(data));
+            localStorage.setItem(cacheExpiryKey, now + cacheDuration);
+        } catch (error) {
+            console.error('Error loading data:', error);
+            return;
+        }
     }
+
+    // Select all hardcoded slides
+    const slides = document.querySelectorAll('.swiper-slide');
+
+    // Loop through each slide and corresponding data item
+    data.data.forEach((item, index) => {
+        if (index < slides.length) {
+            const slide = slides[index];
+            const img = slide.querySelector('img');
+            const skeletons = slide.querySelectorAll('.skeleton');
+            const descriptionElement = slide.querySelector('.achievement-desc');
+
+            // Update the slide's content
+            img.src = item['Image Link'];
+            img.alt = item['Short Desc'];
+            slide.title = item['Short Desc'];
+            descriptionElement.textContent = item['Short Desc'];
+
+            img.onload = () => {
+                // Hide all skeletons and show description when image loads
+                skeletons.forEach(skeleton => skeleton.classList.add('d-none'));
+                descriptionElement.classList.remove('d-none');
+            };
+        }
+    });
 }
 
 // Call loadData to fetch data and update slides
 loadData();
 
-
+// Keep your existing logo-cloud code unchanged
 let containers = document.querySelectorAll(".logo-cloud");
 let isScrolling;
 
 containers.forEach(container => {
-    container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2; // Center the scroll for each container
+    container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
     container.addEventListener('scrollend', snapBackToCenter);
     container.addEventListener('touchend', snapBackToCenter);
 });

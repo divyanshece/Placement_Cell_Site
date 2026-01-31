@@ -1,0 +1,31 @@
+<!-- Announcements Section -->
+<div class="cpc-announcement-wrapper">
+ 
+    <!-- Announcements Button -->
+    <button id="announcement-btn" type="button" class="cpc-announcement-btn" data-bs-toggle="offcanvas"
+        data-bs-target="#announcement-sidebar" aria-controls="announcement-sidebar">
+        <!-- Blinking Dot -->
+        <span class="cpc-announcement-dot"></span>
+        <span class="cpc-announcement-label">ANNOUNCEMENTS</span>
+        <!-- Rotating Icon -->
+        <span class="cpc-announcement-icon" id="rotate-icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+    </button>
+</div>
+
+<!-- Sliding Sidebar for Announcements -->
+<div id="announcement-sidebar" class="offcanvas offcanvas-end cpc-announcement-offcanvas" tabindex="-1"
+    aria-labelledby="announcement-title" data-bs-backdrop="false" data-bs-scroll="true">
+    <div class="offcanvas-body p-0">
+        <div class="cpc-announcement-body">
+            <h2 id="announcement-title" class="cpc-announcement-title">
+                <span>For Recruiters/Students</span>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </h2>
+            <ul id="announcement-list" class="cpc-announcement-list">
+                <!-- Announcements will be dynamically populated here -->
+            </ul>
+        </div>
+    </div>
+</div>

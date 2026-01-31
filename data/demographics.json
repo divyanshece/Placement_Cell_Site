@@ -26,42 +26,266 @@
         "IPE": 119,
         "EEE": 111
     },
-   "genderData": {
-        "CSE": [65, 35],
-        "IT": [60, 40],
-        "ECE": [70, 30],
-        "Mech.": [85, 15],
-        "Civil": [75, 25],
-        "Chem.": [50, 50],
-        "IPE": [55, 45],
-        "EEE": [60, 40]
+    "genderData": {
+        "CSE": [
+            65,
+            35
+        ],
+        "IT": [
+            60,
+            40
+        ],
+        "ECE": [
+            70,
+            30
+        ],
+        "Mech.": [
+            85,
+            15
+        ],
+        "Civil": [
+            75,
+            25
+        ],
+        "Chem.": [
+            50,
+            50
+        ],
+        "IPE": [
+            55,
+            45
+        ],
+        "EEE": [
+            60,
+            40
+        ]
     },
     "employers": {
-        "A": ["Amazon", "Adobe", "Accenture", "Apple", "Airbnb"],
-        "B": ["Boeing", "Bosch", "Bain & Company", "BMW", "BlackRock"],
-        "C": ["Cisco", "Cognizant", "Capgemini", "Citibank", "Chevron"],
-        "D": ["Deloitte", "Dropbox", "Dell", "Disney", "Dow Chemical"],
-        "E": ["eBay", "Ericsson", "ExxonMobil", "Expedia", "Edelman"],
-        "F": ["Facebook", "Ford", "Fidelity", "FedEx", "Fujitsu"],
-        "G": ["Google", "Goldman Sachs", "General Motors", "GE", "Gartner"],
-        "H": ["HP", "Hewlett Packard Enterprise", "Honeywell", "HSBC", "HCL"],
-        "I": ["IBM", "Intel", "Infosys", "IKEA", "InterContinental Hotels"],
-        "J": ["JP Morgan", "Johnson & Johnson", "Juniper Networks", "Jabil", "JetBlue"],
-        "K": ["KPMG", "Kellogg", "Kraft Heinz", "Kingfisher", "Kia Motors"],
-        "L": ["LinkedIn", "Larsen & Toubro", "Lockheed Martin", "Lufthansa", "Lowe's"],
-        "M": ["Microsoft", "Morgan Stanley", "McKinsey & Company", "Mastercard", "Merck"],
-        "N": ["Netflix", "Nokia", "Nestle", "NVIDIA", "Nissan"],
-        "O": ["Oracle", "OYO", "OpenText", "Oberoi Hotels", "Occidental Petroleum"],
-        "P": ["PayPal", "PepsiCo", "Philips", "Procter & Gamble", "Pfizer"],
-        "Q": ["Qualcomm", "Quora", "Qatar Airways", "Quick Heal", "Quad"],
-        "R": ["Red Hat", "Roche", "Raytheon", "Royal Dutch Shell", "Rakuten"],
-        "S": ["Salesforce", "Siemens", "Samsung", "Spotify", "SpaceX"],
-        "T": ["Tesla", "Tata Consultancy Services", "Twitter", "Toyota", "TikTok"],
-        "U": ["Uber", "Unilever", "UPS", "United Airlines", "U.S. Bank"],
-        "V": ["Visa", "Volvo", "Verizon", "VMware", "Vanguard"],
-        "W": ["Walmart", "Wipro", "Western Union", "Warner Bros", "WeWork"],
-        "X": ["Xerox", "Xiaomi", "Xilinx", "XPO Logistics", "Xylem"],
-        "Y": ["Yahoo", "Yamaha", "Yandex", "Yum Brands", "Yellow Pages"],
-        "Z": ["Zoom", "Zebra Technologies", "Zillow", "Zscaler", "Zendesk"]
-    }
+        "A": [
+            "Amazon",
+            "Adobe",
+            "Accenture",
+            "Apple",
+            "Airbnb"
+        ],
+        "B": [
+            "Boeing",
+            "Bosch",
+            "Bain & Company",
+            "BMW",
+            "BlackRock"
+        ],
+        "C": [
+            "Cisco",
+            "Cognizant",
+            "Capgemini",
+            "Citibank",
+            "Chevron"
+        ],
+        "D": [
+            "Deloitte",
+            "Dropbox",
+            "Dell",
+            "Disney",
+            "Dow Chemical"
+        ],
+        "E": [
+            "eBay",
+            "Ericsson",
+            "ExxonMobil",
+            "Expedia",
+            "Edelman"
+        ],
+        "F": [
+            "Facebook",
+            "Ford",
+            "Fidelity",
+            "FedEx",
+            "Fujitsu"
+        ],
+        "G": [
+            "Google",
+            "Goldman Sachs",
+            "General Motors",
+            "GE",
+            "Gartner"
+        ],
+        "H": [
+            "HP",
+            "Hewlett Packard Enterprise",
+            "Honeywell",
+            "HSBC",
+            "HCL"
+        ],
+        "I": [
+            "IBM",
+            "Intel",
+            "Infosys",
+            "IKEA",
+            "InterContinental Hotels"
+        ],
+        "J": [
+            "JP Morgan",
+            "Johnson & Johnson",
+            "Juniper Networks",
+            "Jabil",
+            "JetBlue"
+        ],
+        "K": [
+            "KPMG",
+            "Kellogg",
+            "Kraft Heinz",
+            "Kingfisher",
+            "Kia Motors"
+        ],
+        "L": [
+            "LinkedIn",
+            "Larsen & Toubro",
+            "Lockheed Martin",
+            "Lufthansa",
+            "Lowe's"
+        ],
+        "M": [
+            "Microsoft",
+            "Morgan Stanley",
+            "McKinsey & Company",
+            "Mastercard",
+            "Merck"
+        ],
+        "N": [
+            "Netflix",
+            "Nokia",
+            "Nestle",
+            "NVIDIA",
+            "Nissan"
+        ],
+        "O": [
+            "Oracle",
+            "OYO",
+            "OpenText",
+            "Oberoi Hotels",
+            "Occidental Petroleum"
+        ],
+        "P": [
+            "PayPal",
+            "PepsiCo",
+            "Philips",
+            "Procter & Gamble",
+            "Pfizer"
+        ],
+        "Q": [
+            "Qualcomm",
+            "Quora",
+            "Qatar Airways",
+            "Quick Heal",
+            "Quad"
+        ],
+        "R": [
+            "Red Hat",
+            "Roche",
+            "Raytheon",
+            "Royal Dutch Shell",
+            "Rakuten"
+        ],
+        "S": [
+            "Salesforce",
+            "Siemens",
+            "Samsung",
+            "Spotify",
+            "SpaceX"
+        ],
+        "T": [
+            "Tesla",
+            "Tata Consultancy Services",
+            "Twitter",
+            "Toyota",
+            "TikTok"
+        ],
+        "U": [
+            "Uber",
+            "Unilever",
+            "UPS",
+            "United Airlines",
+            "U.S. Bank"
+        ],
+        "V": [
+            "Visa",
+            "Volvo",
+            "Verizon",
+            "VMware",
+            "Vanguard"
+        ],
+        "W": [
+            "Walmart",
+            "Wipro",
+            "Western Union",
+            "Warner Bros",
+            "WeWork"
+        ],
+        "X": [
+            "Xerox",
+            "Xiaomi",
+            "Xilinx",
+            "XPO Logistics",
+            "Xylem"
+        ],
+        "Y": [
+            "Yahoo",
+            "Yamaha",
+            "Yandex",
+            "Yum Brands",
+            "Yellow Pages"
+        ],
+        "Z": [
+            "Zoom",
+            "Zebra Technologies",
+            "Zillow",
+            "Zscaler",
+            "Zendesk"
+        ]
+    },
+    "alumni": [
+        {
+            "name": "Pushpendra Tiwari",
+            "img": "https://media.licdn.com/dms/image/v2/C4D03AQGYMuRcZeVUCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643819774333?e=1735776000&v=beta&t=SY7VGpN776rRJCsq0q-91g16w_5J3emGxi7m_N92G4I",
+            "linkedin": "https://www.linkedin.com/in/ptiwari/",
+            "desc": "Director, Technology Delivery at Accenture"
+        },
+        {
+            "name": "Swati Tiwari",
+            "img": "",
+            "linkedin": "",
+            "desc": "Global Process Lead at Apple Inc., Texas, USA"
+        },
+        {
+            "name": "Rishabh Gupta",
+            "img": "https://media.licdn.com/dms/image/v2/D5603AQHWwtYPOQHosA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671856607875?e=1735776000&v=beta&t=tZgnxW3gYmJ-1bZrNP6Q9CnpMBW3h8VFZkuh7N0igUo",
+            "linkedin": "https://www.linkedin.com/in/rishabhgupta1997/",
+            "desc": "Gate AIR-2, Data Scientist at Flipkart"
+        },
+        {
+            "name": "Anindita Mitra",
+            "img": "https://assets.hindustantimes.com/img/2024/07/11/1600x900/Anindita-Mitra--a-2007-batch-IAS-officer-of-the-Pu_1720726351908.jpg",
+            "linkedin": "",
+            "desc": "IAS Officer, Chandigarh MC chief"
+        },
+        {
+            "name": "Raj S",
+            "img": "https://media.licdn.com/dms/image/v2/D5603AQF-Ygt0xNcdGA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714076522053?e=1735776000&v=beta&t=xwvKD-Kd0-sEFEFt-zmN2N_3d-uejYh0qXWgeI-SEbY",
+            "linkedin": "https://www.linkedin.com/in/raj-from-utobo/",
+            "desc": "Founder & CEO at utobo.com"
+        },
+        {
+            "name": "Ritesh Kumar",
+            "img": "https://media.licdn.com/dms/image/v2/C4E03AQFPJdM0ge5SjA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1549398371047?e=1735776000&v=beta&t=L62gDvmP3F2Y4WSp0brls9HPjQnNlN7rRmrfVVVUxFw",
+            "linkedin": "https://www.linkedin.com/in/ritesh-kumar-4015b638/?originalSubdomain=in",
+            "desc": "Head of Custody FX Operations at JP Morgan Chase"
+        },
+        {
+            "name": "Musarif Pasha",
+            "img": "https://media.licdn.com/dms/image/v2/C5103AQHjBtL58KCWGw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1581005206551?e=1735776000&v=beta&t=pWlu57M3m7RZnLsBRDvwiEZgT9NGYyMdkLG0e-kCUpY",
+            "linkedin": "https://www.linkedin.com/in/musarif-pasha-a86ba728/?originalSubdomain=in",
+            "desc": "Vice President, Sales and Marketing at Alkem Laboratories Ltd"
+        }
+    ]
 }
