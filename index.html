@@ -1,767 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GGV - Central Placement Cell</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GGV - Central Placement Cell</title>
+    <!-- Meta Tags -->
+    <meta
+      name="description"
+      content="The Central Placement Cell of Guru Ghasidas Vishwavidyalaya, Bilaspur, is committed to facilitating top-tier placements and internships for engineering students. Our dedicated team collaborates with leading organizations, providing students with career-oriented training, skill development, and opportunities for real-world experience in the engineering field."
+    />
+    <meta
+      name="keywords"
+      content="Guru Ghasidas Vishwavidyalaya placements, Training & Placement Cell, Central Placement Cell,  Bilaspur engineering internships, campus recruitment engineering students, engineering placements India, career training engineering, top placements SOSET, industry collaboration SOSET GGV"
+    />
+    <link rel="me" href="https://www.linkedin.com/company/cpc-ggv/" />
+    <meta property="og:title" content="Central Placement Cell |  Guru Ghasidas Vishwavidyalaya" />
+    <meta
+      property="og:description"
+      content="The CPC, Guru Ghasidas Vishwavidyalaya, Bilaspur, connects students with prominent organizations for placements and internships, helping students build successful careers."
+    />
+    <meta property="og:url" content="https://new.ggu.ac.in" />
+    <meta property="og:type" content="website" />
+    <meta name="author" content="Central Placement Cell, Guru Ghasidas Vishwavidyalaya" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <!-- Meta Tags -->
-  <meta name="description"
-    content="The Central Placement Cell of Guru Ghasidas Vishwavidyalaya, Bilaspur, is committed to facilitating top-tier placements and internships for engineering students. Our dedicated team collaborates with leading organizations, providing students with career-oriented training, skill development, and opportunities for real-world experience in the engineering field." />
-  <meta name="keywords"
-    content="Guru Ghasidas Vishwavidyalaya placements, Training & Placement Cell, Central Placement Cell,  Bilaspur engineering internships, campus recruitment engineering students, engineering placements India, career training engineering, top placements SOSET, industry collaboration SOSET GGV" />
-  <link rel="me" href="https://www.linkedin.com/company/cpc-ggv/" />
-  <meta property="og:title" content="Central Placement Cell |  Guru Ghasidas Vishwavidyalaya" />
-  <meta property="og:description"
-    content="The CPC, Guru Ghasidas Vishwavidyalaya, Bilaspur, connects students with prominent organizations for placements and internships, helping students build successful careers." />
-  <meta property="og:url" content="https://new.ggu.ac.in" />
-  <meta property="og:type" content="website" />
-  <meta name="author" content="Central Placement Cell, Guru Ghasidas Vishwavidyalaya" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico?" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico?" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./cdns/aos/aos.css" />
+    <link rel="stylesheet" href="./cdns/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="./cdns/font-awesome/css/font-awesome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./input.css" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./cdns/aos/aos.css">
-  <link rel="stylesheet" href="./cdns/swiper/swiper-bundle.css">
-  <link rel="stylesheet" href="./cdns/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./input.css" />
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="./cdns/swiper/swiper-bundle.js" defer></script>
+    <script src="./cdns/aos/aos.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/index.js" defer></script>
+  </head>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="./cdns/swiper/swiper-bundle.js" defer></script>
-  <script src="./cdns/aos/aos.js" defer></script>
-  <script src="./js/common.js" defer></script>
-  <script src="./js/index.js" defer></script>
-</head>
+  <body class="bg-light">
+    <!-- Preloader -->
+    <section
+      id="preloader"
+      class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-light cpc-z-overlay"
+    >
+      <!-- Logo in Center -->
+      <img src="assets/logos/logos_ggu3.png" alt="Logo" class="mb-4 cpc-preloader-logo" />
 
-<body class="bg-light">
-
-  <!-- Preloader -->
-  <section id="preloader" class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-light cpc-z-overlay">
-    <!-- Logo in Center -->
-    <img src="assets/logos/logos_ggu3.png" alt="Logo" class="mb-4 cpc-preloader-logo">
-
-    <!-- Loader Spinner and Loading Text -->
-    <div class="loader d-flex align-items-center justify-content-center gap-2 mb-4">
-      <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
-      <p class="text-primary fw-semibold fs-5 mb-0 cpc-animate-pulse">Loading...</p>
-    </div>
-
-    <!-- Faded Background Image at the Bottom -->
-    <div class="cpc-preloader-bg">
-      <div class="cpc-preloader-gradient"></div>
-      <img src="assets/1.avif" alt="Background Image" class="cpc-preloader-img">
-    </div>
-  </section>
-
-  <header id="header1"></header>
-  <header id="header2" class="sticky-top"></header>
-
-  <section id="announcements"></section>
-
-  <!-- Hero Video Section -->
-  <section class="position-relative cpc-hero cpc-max-w mx-auto w-100">
-    <video autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
-      <source src="./assets/hero.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-
-    <!-- Centered Logos Section -->
-    <div class="position-absolute top-50 start-50 translate-middle text-center z-1">
-
-      <!-- Logos -->
-      <div class="d-flex justify-content-center align-items-center gap-3 mb-3" data-aos="fade-up" data-aos-delay="200">
-        <img src="./assets/logos/logos_naac.png" alt="Logo 1" class="cpc-hero-logo">
-        <img src="./assets/logos/logos_ugc.png" alt="Logo 2" class="cpc-hero-logo">
+      <!-- Loader Spinner and Loading Text -->
+      <div class="loader d-flex align-items-center justify-content-center gap-2 mb-4">
+        <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+        <p class="text-primary fw-semibold fs-5 mb-0 cpc-animate-pulse">Loading...</p>
       </div>
 
-      <!-- Text Content -->
-      <h1 class="cpc-hero-title text-white d-none d-sm-block" data-aos="fade-up" data-aos-delay="400"
-        data-aos-once="true">
-        Central Placement Cell
-      </h1>
-      <h1 class="cpc-hero-title text-white d-block d-sm-none" data-aos="fade-up" data-aos-delay="400"
-        data-aos-once="true">
-        Central Placement Cell
-      </h1>
-      <p class="cpc-text-lg text-white-50 mt-2" data-aos="fade-up" data-aos-delay="600" data-aos-once="true">
-        Guru Ghasidas Vishwavidyalaya, Bilaspur
-      </p>
-      <div class="mt-4" data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
-        <a href="https://forms.gle/hjZi6rxityPHLFAA7" target="_blank" class="btn btn-primary cpc-btn-hero ms-3">Hire a
-          Talent</a>
+      <!-- Faded Background Image at the Bottom -->
+      <div class="cpc-preloader-bg">
+        <div class="cpc-preloader-gradient"></div>
+        <img src="assets/1.avif" alt="Background Image" class="cpc-preloader-img" />
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section class="cpc-section-xl" data-aos="fade-up">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="cpc-section-title text-center text-dark" data-aos="fade-up" data-aos-delay="200">
-        Overview
+    <header id="header1"></header>
+    <header id="header2" class="sticky-top"></header>
+
+    <section id="announcements"></section>
+
+    <!-- Hero Video Section -->
+    <section class="position-relative cpc-hero cpc-max-w mx-auto w-100">
+      <video
+        autoplay
+        muted
+        loop
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+      >
+        <source src="./assets/hero.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+      <!-- Centered Logos Section -->
+      <div class="position-absolute top-50 start-50 translate-middle text-center z-1">
+        <!-- Logos -->
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-3"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <img src="./assets/logos/logos_naac.png" alt="Logo 1" class="cpc-hero-logo" />
+          <img src="./assets/logos/logos_ugc.png" alt="Logo 2" class="cpc-hero-logo" />
+        </div>
+
+        <!-- Text Content -->
+        <h1
+          class="cpc-hero-title text-white d-none d-sm-block"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-once="true"
+        >
+          Central Placement Cell
+        </h1>
+        <h1
+          class="cpc-hero-title text-white d-block d-sm-none"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-once="true"
+        >
+          Central Placement Cell
+        </h1>
+        <p
+          class="cpc-text-lg text-white-50 mt-2"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-once="true"
+        >
+          Guru Ghasidas Vishwavidyalaya, Bilaspur
+        </p>
+        <div class="mt-4" data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
+          <a
+            href="https://ggv.samarth.ac.in/index.php/training/company-profile-requests/register"
+            target="_blank"
+            class="btn btn-primary cpc-btn-hero ms-3"
+            >Hire a Talent</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="cpc-section-xl" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="cpc-section-title text-center text-dark" data-aos="fade-up" data-aos-delay="200">
+          Overview
+        </h2>
+        <p
+          class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          The Central Placement Cell of Guru Ghasidas Vishwavidyalaya, Bilaspur, is dedicated to
+          facilitating student placements across various disciplines. The CPC-GGV collaborates with
+          leading organizations to provide internship & training opportunities, ensuring students
+          are career-ready.
+        </p>
+        <p
+          class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          The placement season runs from <b>late July to May</b>, during which numerous companies
+          conduct campus interviews. The CPC-GGV is equipped with modern facilities for group
+          discussions & interviews, & it organizes pre-placement talks to foster interaction between
+          students & potential employers.
+        </p>
+        <p
+          class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-5"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          A committee of student representatives from undergraduate programs supports the CPC-GGV in
+          developing annual policies & guidelines for the placement process. This collaboration
+          ensures that student feedback is integral to decision-making.
+        </p>
+
+        <div class="cpc-pt-8 cpc-pt-16-at-640" data-aos="fade-up" data-aos-delay="600">
+          <h3 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5 text-dark">Key Activities</h3>
+
+          <div class="cpc-ka-grid">
+            <!-- Skill Development Programs Card -->
+            <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="700">
+              <div class="cpc-ka-media">
+                <img
+                  src="./assets/skill_development.avif"
+                  alt="Skill Development Programs"
+                  class="cpc-ka-img"
+                />
+                <div class="cpc-ka-overlay">
+                  <i class="fas fa-comments cpc-ka-icon"></i>
+                </div>
+                <div class="cpc-ka-gradient"></div>
+                <p class="cpc-ka-desc">
+                  Offering communication skill development from the first semester.
+                </p>
+              </div>
+              <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">
+                Skill Development Programs
+              </h4>
+            </div>
+
+            <!-- Mock Interviews Card -->
+            <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="800">
+              <div class="cpc-ka-media">
+                <img src="./assets/mock_interview.jpeg" alt="Mock Interviews" class="cpc-ka-img" />
+                <div class="cpc-ka-overlay">
+                  <i class="fas fa-user-check cpc-ka-icon"></i>
+                </div>
+                <div class="cpc-ka-gradient"></div>
+                <p class="cpc-ka-desc">
+                  Organizing mock interviews & aptitude tests for pre-final & final-year students.
+                </p>
+              </div>
+              <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Mock Interviews</h4>
+            </div>
+
+            <!-- Industry Interaction Programs Card -->
+            <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="900">
+              <div class="cpc-ka-media">
+                <img
+                  src="./assets/industry_interaction.avif"
+                  alt="Industry Interaction Programs"
+                  class="cpc-ka-img"
+                />
+                <div class="cpc-ka-overlay">
+                  <i class="fas fa-briefcase cpc-ka-icon"></i>
+                </div>
+                <div class="cpc-ka-gradient"></div>
+                <p class="cpc-ka-desc">
+                  Facilitating interactions between students & industry professionals.
+                </p>
+              </div>
+              <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">
+                Industry Interaction Programs
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="cpc-msg-section">
+      <h2 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5" data-aos="fade-up">
+        Message From Heads
       </h2>
-      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4" data-aos="fade-up" data-aos-delay="300">
-        The Central Placement Cell of Guru
-        Ghasidas Vishwavidyalaya, Bilaspur, is dedicated to facilitating student placements across various
-        disciplines. The CPC-GGV collaborates with leading
-        organizations to provide internship & training opportunities, ensuring students are career-ready.
-      </p>
-      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-4" data-aos="fade-up" data-aos-delay="400">
-        The placement season runs from <b>late July to March</b>, during which numerous companies conduct campus
-        interviews. The CPC-GGV is equipped with modern facilities for group discussions & interviews, & it
-        organizes pre-placement talks to foster interaction between students & potential employers.
-      </p>
-      <p class="cpc-text-lg text-secondary text-justify cpc-hyphens-auto mb-5" data-aos="fade-up" data-aos-delay="500">
-        A committee of student representatives from undergraduate programs supports the CPC-GGV in developing annual
-        policies & guidelines for the placement process. This collaboration ensures that
-        student feedback is integral to decision-making.
-      </p>
+      <div class="cpc-msg-container" data-aos="fade-up">
+        <!-- First Div -->
+        <div class="cpc-msg-slide">
+          <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="100">
+            <img
+              src="./assets/vc.avif"
+              alt="Image 3"
+              class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm"
+            />
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
-      <div class="cpc-pt-8 cpc-pt-16-at-640" data-aos="fade-up" data-aos-delay="600">
-        <h3 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5 text-dark">Key Activities</h3>
-
-        <div class="cpc-ka-grid">
-          <!-- Skill Development Programs Card -->
-          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="700">
-            <div class="cpc-ka-media">
-              <img src="./assets/skill_development.avif" alt="Skill Development Programs" class="cpc-ka-img" />
-              <div class="cpc-ka-overlay">
-                <i class="fas fa-comments cpc-ka-icon"></i>
-              </div>
-              <div class="cpc-ka-gradient"></div>
-              <p class="cpc-ka-desc">
-                Offering communication skill development from the first semester.
-              </p>
+            <!-- Circular Div in Center of First Div -->
+            <div class="cpc-msg-avatar-center">
+              <img
+                src="./assets/vc.avif"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
             </div>
-            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Skill Development Programs</h4>
-          </div>
 
-          <!-- Mock Interviews Card -->
-          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="800">
-            <div class="cpc-ka-media">
-              <img src="./assets/mock_interview.jpeg" alt="Mock Interviews" class="cpc-ka-img" />
-              <div class="cpc-ka-overlay">
-                <i class="fas fa-user-check cpc-ka-icon"></i>
-              </div>
-              <div class="cpc-ka-gradient"></div>
-              <p class="cpc-ka-desc">
-                Organizing mock interviews & aptitude tests for pre-final & final-year students.
-              </p>
+            <div class="cpc-msg-avatar-corner">
+              <img
+                src="./assets/vc.avif"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
             </div>
-            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Mock Interviews</h4>
-          </div>
 
-          <!-- Industry Interaction Programs Card -->
-          <div class="cpc-ka-card" data-aos="zoom-in" data-aos-delay="900">
-            <div class="cpc-ka-media">
-              <img src="./assets/industry_interaction.avif" alt="Industry Interaction Programs" class="cpc-ka-img" />
-              <div class="cpc-ka-overlay">
-                <i class="fas fa-briefcase cpc-ka-icon"></i>
-              </div>
-              <div class="cpc-ka-gradient"></div>
-              <p class="cpc-ka-desc">
-                Facilitating interactions between students & industry professionals.
-              </p>
-            </div>
-            <h4 class="text-center cpc-text-lg fw-bold text-dark mt-3">Industry Interaction Programs</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Message Section -->
-  <section class="cpc-msg-section">
-    <h2 class="cpc-text-3xl fw-bold text-center mb-4 mb-lg-5" data-aos="fade-up">Message From Heads</h2>
-    <div class="cpc-msg-container" data-aos="fade-up">
-
-
-      <!-- First Div -->
-      <div class="cpc-msg-slide">
-        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="100">
-          <img src="./assets/vc.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
-
-          <!-- Circular Div in Center of First Div -->
-          <div class="cpc-msg-avatar-center">
-
-            <img src="./assets/vc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
-
-          <div class="cpc-msg-avatar-corner">
-            <img src="./assets/vc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
-
-          <!-- Message Overlay for First Div -->
-          <div class="cpc-msg-overlay-center">
-            <i class="fas fa-quote-left fs-3 mb-2"></i>
-            <p class="fs-5 fw-semibold mb-0">Prof. A. K. Chakrawal,<br>Vice Chancellor, GGV</p>
-            <a href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/" target="_blank">
-              <i class="fab fa-linkedin fs-4 mt-2"></i>
-            </a>
-          </div>
-          <div class="cpc-msg-overlay-top">
-            <div class="cpc-msg-meta">
-              <div class="cpc-msg-meta-inner">
-                <p class="small fw-semibold mb-0">Prof. A. K. Chakrawal</p>
-                <p class="small fw-semibold mb-0">Vice Chancellor, GGV</p>
-              </div>
-              <a href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/" target="_blank" class="cpc-msg-meta-link">
+            <!-- Message Overlay for First Div -->
+            <div class="cpc-msg-overlay-center">
+              <i class="fas fa-quote-left fs-3 mb-2"></i>
+              <p class="fs-5 fw-semibold mb-0">Prof. A. K. Chakrawal,<br />Vice Chancellor, GGV</p>
+              <a
+                href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/"
+                target="_blank"
+              >
                 <i class="fab fa-linkedin fs-4 mt-2"></i>
               </a>
             </div>
-            <div class="cpc-msg-text">
-              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">Guru Ghasidas
-                Vishwavidyalaya
-                is
-                the Central University of Chhattisgarh which bears the principal charge of providing job-oriented
-                education,
-                taking care of the educational aspirations, propagation of quality education, & enlightenment of the
-                people
-                of local society & remote areas.
-                <br />
-                We shall comprehensively make efforts to grow this University, named after the great saint Baba Guru
-                Ghasidasji, like a banyan tree of higher learning at the national & international level.
-              </p>
+            <div class="cpc-msg-overlay-top">
+              <div class="cpc-msg-meta">
+                <div class="cpc-msg-meta-inner">
+                  <p class="small fw-semibold mb-0">Prof. A. K. Chakrawal</p>
+                  <p class="small fw-semibold mb-0">Vice Chancellor, GGV</p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/prof-alok-kumar-chakrawal-27627215/"
+                  target="_blank"
+                  class="cpc-msg-meta-link"
+                >
+                  <i class="fab fa-linkedin fs-4 mt-2"></i>
+                </a>
+              </div>
+              <div class="cpc-msg-text">
+                <p
+                  class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0"
+                >
+                  Guru Ghasidas Vishwavidyalaya is the Central University of Chhattisgarh which
+                  bears the principal charge of providing job-oriented education, taking care of the
+                  educational aspirations, propagation of quality education, & enlightenment of the
+                  people of local society & remote areas.
+                  <br />
+                  We shall comprehensively make efforts to grow this University, named after the
+                  great saint Baba Guru Ghasidasji, like a banyan tree of higher learning at the
+                  national & international level.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Second Div -->
-      <div class="cpc-msg-slide">
-        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="200">
-          <img src="./assets/pc.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
+        <!-- Second Div -->
+        <div class="cpc-msg-slide">
+          <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="./assets/pc.avif"
+              alt="Image 3"
+              class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm"
+            />
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
-          <!-- Circular Div in Center of Second Div -->
-          <div class="cpc-msg-avatar-center">
-            <img src="./assets/pc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
+            <!-- Circular Div in Center of Second Div -->
+            <div class="cpc-msg-avatar-center">
+              <img
+                src="./assets/pc.avif"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
 
-          <div class="cpc-msg-avatar-corner">
-            <img src="./assets/pc.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
+            <div class="cpc-msg-avatar-corner">
+              <img
+                src="./assets/pc.avif"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
 
-          <!-- Message Overlay for Second Div -->
-          <div class="cpc-msg-overlay-center">
-            <i class="fas fa-quote-left fs-3 mb-2"></i>
-            <p class="fs-5 fw-semibold mb-0">Mr. Premnath Kamlesh,<br>TPO, GGV</p>
-            <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank">
-              <i class="fab fa-linkedin fs-4 mt-2"></i>
-            </a>
-          </div>
-          <div class="cpc-msg-overlay-top">
-            <div class="cpc-msg-meta">
-              <div class="cpc-msg-meta-inner">
-                <p class="small fw-semibold mb-0">Mr. Premnath Kamlesh</p>
-                <p class="small fw-semibold mb-0">TPO, GGV</p>
-              </div>
-              <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank" class="cpc-msg-meta-link">
+            <!-- Message Overlay for Second Div -->
+            <div class="cpc-msg-overlay-center">
+              <i class="fas fa-quote-left fs-3 mb-2"></i>
+              <p class="fs-5 fw-semibold mb-0">Mr. Premnath Kamlesh,<br />TPO, GGV</p>
+              <a href="https://www.linkedin.com/in/premnath-kamlesh-22264844/" target="_blank">
                 <i class="fab fa-linkedin fs-4 mt-2"></i>
               </a>
             </div>
-            <div class="cpc-msg-text">
-              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">The students of B.Tech,
-                School
-                of Studies in Engineering & Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur are ready to build their
-                encroach upon the professional arena. With uncompromising academic percentages, many bright students from
-                GGV
-                are nurtured as thoughtful techies because of their enthusiasm for the practical applicability of
-                technology,
-                especially computing.
-                <br />
-                If required, they are eager to do things abundant beyond. I am delighted to present this vibrant batch of
-                students to our honoured recruiters. I trust that they will prove they are capable & acceptable for your
-                industry. I'm desperate to welcome you to our campus & have a protracted & mutually propitious bond with
-                you. I firmly believe that the synergy of organizations will work wonders.
-              </p>
+            <div class="cpc-msg-overlay-top">
+              <div class="cpc-msg-meta">
+                <div class="cpc-msg-meta-inner">
+                  <p class="small fw-semibold mb-0">Mr. Premnath Kamlesh</p>
+                  <p class="small fw-semibold mb-0">TPO, GGV</p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/premnath-kamlesh-22264844/"
+                  target="_blank"
+                  class="cpc-msg-meta-link"
+                >
+                  <i class="fab fa-linkedin fs-4 mt-2"></i>
+                </a>
+              </div>
+              <div class="cpc-msg-text">
+                <p
+                  class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0"
+                >
+                  The students of B.Tech, School of Studies in Engineering & Technology, Guru
+                  Ghasidas Vishwavidyalaya, Bilaspur are ready to build their encroach upon the
+                  professional arena. With uncompromising academic percentages, many bright students
+                  from GGV are nurtured as thoughtful techies because of their enthusiasm for the
+                  practical applicability of technology, especially computing.
+                  <br />
+                  If required, they are eager to do things abundant beyond. I am delighted to
+                  present this vibrant batch of students to our honoured recruiters. I trust that
+                  they will prove they are capable & acceptable for your industry. I'm desperate to
+                  welcome you to our campus & have a protracted & mutually propitious bond with you.
+                  I firmly believe that the synergy of organizations will work wonders.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Third Div -->
-      <div class="cpc-msg-slide">
-        <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="300">
-          <img src="./assets/pc2.avif" alt="Image 3" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
+        <!-- Third Div -->
+        <div class="cpc-msg-slide">
+          <div class="position-relative w-100 h-100" data-aos="zoom-in" data-aos-delay="300">
+            <img
+              src="./assets/pc2.png"
+              alt="Image 3"
+              class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover cpc-blur-sm"
+            />
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
 
-          <!-- Circular Div in Center of Third Div -->
-          <div class="cpc-msg-avatar-center">
-            <img src="./assets/pc2.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
+            <!-- Circular Div in Center of Third Div -->
+            <div class="cpc-msg-avatar-center">
+              <img
+                src="./assets/pc2.png"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
 
-          <div class="cpc-msg-avatar-corner">
-            <img src="./assets/pc2.avif" alt="Circular Image" class="w-100 h-100 object-fit-cover">
-          </div>
+            <div class="cpc-msg-avatar-corner">
+              <img
+                src="./assets/pc2.png"
+                alt="Circular Image"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
 
-          <!-- Message Overlay for Third Div -->
-          <div class="cpc-msg-overlay-center">
-            <i class="fas fa-quote-left fs-3 mb-2"></i>
-            <p class="fs-5 fw-semibold mb-0">Prof. Ratnesh Singh,<br>Nodal Officer, GGV</p>
-            <a href="https://www.linkedin.com/in/dr-ratnesh-singh-6b153360/" target="_blank">
-              <i class="fab fa-linkedin fs-4 mt-2"></i>
-            </a>
-          </div>
-          <div class="cpc-msg-overlay-top">
-            <div class="cpc-msg-meta">
-              <div class="cpc-msg-meta-inner">
-                <p class="small fw-semibold mb-0">Prof. Ratnesh Singh</p>
-                <p class="small fw-semibold mb-0">Nodal Officer, GGV</p>
-              </div>
-              <a href="https://www.linkedin.com/in/dr-ratnesh-singh-6b153360/" target="_blank" class="cpc-msg-meta-link">
+            <!-- Message Overlay for Third Div -->
+            <div class="cpc-msg-overlay-center">
+              <i class="fas fa-quote-left fs-3 mb-2"></i>
+              <p class="fs-5 fw-semibold mb-0">
+                Prof. Manju Nath Swamy,<br />Incharge Professor, GGV
+              </p>
+              <a
+                href="https://www.linkedin.com/in/prof-manjunath-swamy-b-e-293b68166/"
+                target="_blank"
+              >
                 <i class="fab fa-linkedin fs-4 mt-2"></i>
               </a>
             </div>
-            <div class="cpc-msg-text">
-              <p class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0">I extend a cordial
-                invitation
-                for the
-                placement program at the School of Studies in Engineering & Technology, GGV.
-                We offer recruiters access to a unique bouquet of budding technical minds. Our students constitute the top
-                performers in JEE Mains & a re selected after one of the most rigorous admission processes across the
-                Country.
-                <br />
-                The breadth of talent available here is unparalleled across India, making it the campus-of-Choice for its
-                recruiters. The outstanding faculty, brilliant students, & unique course structure create a perfect
-                environment for developing future technical leaders. I assure you that your expectations will not just be
-                met
-                but will be surpassed substantially. GGV has been known for giving future leaders to the industry in India
-                also abroad.
+            <div class="cpc-msg-overlay-top">
+              <div class="cpc-msg-meta">
+                <div class="cpc-msg-meta-inner">
+                  <p class="small fw-semibold mb-0">Prof. Manju Nath Swamy</p>
+                  <p class="small fw-semibold mb-0">Incharge Professor, GGV</p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/prof-manjunath-swamy-b-e-293b68166/"
+                  target="_blank"
+                  class="cpc-msg-meta-link"
+                >
+                  <i class="fab fa-linkedin fs-4 mt-2"></i>
+                </a>
+              </div>
+              <div class="cpc-msg-text">
+                <p
+                  class="text-white small fw-semibold text-justify cpc-hyphens-auto cpc-leading-7 mb-0"
+                >
+                  I extend a cordial invitation for the placement program at the School of Studies
+                  in Engineering & Technology, GGV. We offer recruiters access to a unique bouquet
+                  of budding technical minds. Our students constitute the top performers in JEE
+                  Mains & a re selected after one of the most rigorous admission processes across
+                  the Country.
+                  <br />
+                  The breadth of talent available here is unparalleled across India, making it the
+                  campus-of-Choice for its recruiters. The outstanding faculty, brilliant students,
+                  & unique course structure create a perfect environment for developing future
+                  technical leaders. I assure you that your expectations will not just be met but
+                  will be surpassed substantially. GGV has been known for giving future leaders to
+                  the industry in India also abroad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Recruit Section -->
+    <section class="cpc-section-md" id="why-recruit">
+      <div class="container-xxl">
+        <div class="row g-5 align-items-start">
+          <!-- Left Side -->
+          <div class="col-12 col-md-6" data-aos="fade-right">
+            <div class="d-flex flex-column gap-4">
+              <h2 class="fs-4 fw-bold text-dark animate-fade-in pt-1">
+                WHY GURU GHASIDAS VISHWAVIDYALAYA
+              </h2>
+              <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
+                Grooming leaders who are not only thorough professionals but also good human beings
+                with values, our comprehensive approach emphasizes ethical leadership, critical
+                thinking, & community engagement.
               </p>
+              <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
+                We believe true success is measured not just by academic achievements, but by the
+                positive impact our graduates have on society—making us consistently ranked
+                <span class="fs-5 fw-bold text-dark">No.1</span>.
+              </p>
+              <div class="mt-2 d-grid gap-3 d-sm-flex justify-content-sm-start" data-aos="fade-up">
+                <a
+                  href="https://www.ggu.ac.in/SiteMap.aspx"
+                  target="_blank"
+                  class="btn btn-primary shadow cpc-hover-pop d-flex align-items-center"
+                >
+                  <i class="fas fa-info-circle me-2"></i> Read More About GGV
+                </a>
+
+                <a
+                  href="./demographics.html"
+                  target="_blank"
+                  class="btn btn-success shadow cpc-hover-pop d-flex align-items-center"
+                >
+                  <i class="fas fa-chart-pie me-2"></i> View Detailed Demographics
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-
-    </div>
-  </section>
-
-  <!-- Why Recruit Section -->
-  <section class="cpc-section-md" id="why-recruit">
-    <div class="container-xxl">
-      <div class="row g-5 align-items-start">
-        <!-- Left Side -->
-        <div class="col-12 col-md-6" data-aos="fade-right">
-          <div class="d-flex flex-column gap-4">
-            <h2 class="fs-4 fw-bold text-dark animate-fade-in pt-1">
-              WHY GURU GHASIDAS VISHWAVIDYALAYA
-            </h2>
-            <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
-              Grooming leaders who are not only thorough professionals but also good human beings with values, our
-              comprehensive approach emphasizes ethical leadership, critical thinking, & community engagement.
-            </p>
-            <p class="cpc-text-lg text-secondary animate-slide-in text-justify">
-              We believe true success is measured not just by academic achievements, but by the positive impact our
-              graduates have on society—making us consistently ranked
-              <span class="fs-5 fw-bold text-dark">No.1</span>.
-            </p>
-            <div class="mt-2 d-grid gap-3 d-sm-flex justify-content-sm-start" data-aos="fade-up">
-              <a href="https://www.ggu.ac.in/SiteMap.aspx" target="_blank"
-                class="btn btn-primary shadow cpc-hover-pop d-flex align-items-center">
-                <i class="fas fa-info-circle me-2"></i> Read More About GGV
-              </a>
-
-              <a href="./demographics.html" target="_blank"
-                class="btn btn-success shadow cpc-hover-pop d-flex align-items-center">
-                <i class="fas fa-chart-pie me-2"></i> View Detailed Demographics
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Side Stats -->
-        <div class="col-12 col-md-6 p-4" data-aos="fade-left">
-          <div class="row g-5">
-            <!-- Stat 1 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-yellow text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-trophy"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">#1</p>
-                  <p class="text-secondary mb-0">Graded Autonomy Grant</p>
+          <!-- Right Side Stats -->
+          <div class="col-12 col-md-6 p-4" data-aos="fade-left">
+            <div class="row g-5">
+              <!-- Stat 1 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-yellow text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-trophy"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">#1</p>
+                    <p class="text-secondary mb-0">Graded Autonomy Grant</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Stat 2 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-green text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-chart-line"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">Top</p>
-                  <p class="text-secondary mb-0">Placement in All Streams</p>
+              <!-- Stat 2 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-green text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-chart-line"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">Top</p>
+                    <p class="text-secondary mb-0">Placement in All Streams</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Stat 3 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-purple text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-university"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">200+</p>
-                  <p class="text-secondary mb-0">Academic Programs</p>
+              <!-- Stat 3 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-purple text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-university"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">200+</p>
+                    <p class="text-secondary mb-0">Academic Programs</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Stat 4 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-red text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-rocket"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">10+</p>
-                  <p class="text-secondary mb-0">Startups</p>
+              <!-- Stat 4 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-red text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-rocket"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">10+</p>
+                    <p class="text-secondary mb-0">Startups</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Stat 5 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-blue text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-users"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">30,000+</p>
-                  <p class="text-secondary mb-0">Alumni Network</p>
+              <!-- Stat 5 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-blue text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-users"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">30,000+</p>
+                    <p class="text-secondary mb-0">Alumni Network</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Stat 6 -->
-            <div class="col-12 col-md-6" data-aos="zoom-in">
-              <div class="d-flex align-items-center gap-4">
-                <div class="cpc-bg-teal text-white p-3 shadow rounded">
-                  <p class="fs-4 fw-bold mb-0"><i class="fas fa-globe"></i></p>
-                </div>
-                <div>
-                  <p class="fs-4 fw-bold text-dark mb-0">Multiple</p>
-                  <p class="text-secondary mb-0">Global Alliances</p>
+              <!-- Stat 6 -->
+              <div class="col-12 col-md-6" data-aos="zoom-in">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="cpc-bg-teal text-white p-3 shadow rounded">
+                    <p class="fs-4 fw-bold mb-0"><i class="fas fa-globe"></i></p>
+                  </div>
+                  <div>
+                    <p class="fs-4 fw-bold text-dark mb-0">Multiple</p>
+                    <p class="text-secondary mb-0">Global Alliances</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="student-achievements"></div>
-    <div class="mt-5 mt-lg-5" data-aos="fade-up">
-      <div class="container-xxl overflow-hidden">
-        <h3 class="fs-4 fw-bold text-dark mb-4">Student Achievements</h3>
-        <!-- Slider container -->
+      <div id="student-achievements"></div>
+      <div class="mt-5 mt-lg-5" data-aos="fade-up">
+        <div class="container-xxl overflow-hidden">
+          <h3 class="fs-4 fw-bold text-dark mb-4">Student Achievements</h3>
+          <!-- Slider container -->
 
-        <div class="swiper-container w-100 p-2 overflow-hidden" data-aos="fade-up">
-          <div class="swiper-wrapper">
-            <!-- Hardcoded slides with skeletons -->
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <!-- Image container -->
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+          <div class="swiper-container w-100 p-2 overflow-hidden" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <!-- Hardcoded slides with skeletons -->
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <!-- Image container -->
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <!-- Description container -->
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
                 </div>
-                <!-- Description container -->
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
+              </div>
+
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
+                <div
+                  class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card"
+                >
+                  <div class="position-relative cpc-achievement-media overflow-hidden">
+                    <div
+                      class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"
+                    ></div>
+                    <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-4">
+                    <div
+                      class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"
+                    ></div>
+                    <p
+                      class="small text-secondary fw-semibold text-truncate d-none achievement-desc"
+                    ></p>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide" title="Loading..." data-aos="zoom-in">
-              <div class="bg-white rounded-4 shadow-sm overflow-hidden h-100 cpc-achievement-card">
-                <div class="position-relative cpc-achievement-media overflow-hidden">
-                  <div class="w-100 h-100 bg-body-secondary cpc-animate-pulse skeleton position-absolute top-0 start-0 cpc-z-10"></div>
-                  <img src="" alt="Loading..." class="w-100 h-100 object-fit-cover" />
-                </div>
-                <div class="p-4">
-                  <div class="cpc-achievement-skeleton-line bg-body-secondary cpc-animate-pulse skeleton rounded"></div>
-                  <p class="small text-secondary fw-semibold text-truncate d-none achievement-desc"></p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-
-  </section>
-
-
-  <!-- Past Recruiters Section -->
-  <section class="cpc-section-xl" data-aos="fade-up" id="past-recruiters">
-    <div class="container-xxl" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="cpc-section-title text-center mb-0">
-        Our Past Recruiters
-      </h2>
-    </div>
-
-    <!-- logo-cloud -->
-    <div class="cpc-logo-cloud w-100 overflow-x-auto hide-scrollbar mt-5">
-      <div class="d-flex h-100 cpc-logo-track overflow-hidden">
-        <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
-          <a href="https://www.larsentoubro.com/" target="_blank">
-            <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.geminisolutions.com/" target="_blank">
-            <img src="assets/logos/logos_gemini.png" class="cpc-logo-cloud-img" alt="Gemini Solutions" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.thermaxglobal.com/" target="_blank">
-            <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.adani.com/" target="_blank">
-            <img src="assets/logos/logos_adani.png" class="cpc-logo-cloud-img" alt="Adani Enterprises" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.allstate.com" target="_blank">
-            <img src="assets/logos/logos_allstate.png" class="cpc-logo-cloud-img" alt="Allstate" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.zaggle.in" target="_blank">
-            <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.dhoottransmission.com/" target="_blank">
-            <img src="assets/logos/logos_dhoot.png" class="cpc-logo-cloud-img" alt="Dhoot Transmission" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.tcs.com" target="_blank">
-            <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.alohatechnology.com/" target="_blank">
-            <img src="assets/logos/logos_aloha.png" class="cpc-logo-cloud-img" alt="Aloha Technology" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.mountblue.io/" target="_blank">
-            <img src="assets/logos/logos_mountblue.png" class="cpc-logo-cloud-img" alt="MountBlue Technologies" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.revature.com" target="_blank">
-            <img src="assets/logos/logos_revature.png" class="cpc-logo-cloud-img" alt="Revature" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.wipro.com" target="_blank">
-            <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.infosys.com" target="_blank">
-            <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://hcl.com/" target="_blank">
-            <img src="assets/logos/logos_hcl.png" class="cpc-logo-cloud-img" alt="HCL Technologies" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.techmahindra.com" target="_blank">
-            <img src="assets/logos/logos_techmahindra.png" class="cpc-logo-cloud-img" alt="Tech Mahindra" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-        </span>
-
-        <!-- Duplicated set of logos for seamless looping -->
-        <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
-          <a href="https://www.larsentoubro.com/" target="_blank">
-            <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.geminisolutions.com/" target="_blank">
-            <img src="assets/logos/logos_gemini.png" class="cpc-logo-cloud-img" alt="Gemini Solutions" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.thermaxglobal.com/" target="_blank">
-            <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.adani.com/" target="_blank">
-            <img src="assets/logos/logos_adani.png" class="cpc-logo-cloud-img" alt="Adani Enterprises" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.allstate.com" target="_blank">
-            <img src="assets/logos/logos_allstate.png" class="cpc-logo-cloud-img" alt="Allstate" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.zaggle.in" target="_blank">
-            <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.dhoottransmission.com/" target="_blank">
-            <img src="assets/logos/logos_dhoot.png" class="cpc-logo-cloud-img" alt="Dhoot Transmission" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.tcs.com" target="_blank">
-            <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.alohatechnology.com/" target="_blank">
-            <img src="assets/logos/logos_aloha.png" class="cpc-logo-cloud-img" alt="Aloha Technology" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.mountblue.io/" target="_blank">
-            <img src="assets/logos/logos_mountblue.png" class="cpc-logo-cloud-img" alt="MountBlue Technologies" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.revature.com" target="_blank">
-            <img src="assets/logos/logos_revature.png" class="cpc-logo-cloud-img" alt="Revature" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.wipro.com" target="_blank">
-            <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.infosys.com" target="_blank">
-            <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://hcl.com/" target="_blank">
-            <img src="assets/logos/logos_hcl.png" class="cpc-logo-cloud-img" alt="HCL Technologies" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-
-
-          <a href="https://www.techmahindra.com" target="_blank">
-            <img src="assets/logos/logos_techmahindra.png" class="cpc-logo-cloud-img" alt="Tech Mahindra" />
-          </a>
-          <img src="assets/logos/logos_divider.png" class="cpc-logo-cloud-divider" alt="Divider" />
-        </span>
-
+    <!-- Past Recruiters Section -->
+    <section class="cpc-section-xl" data-aos="fade-up" id="past-recruiters">
+      <div class="container-xxl" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="cpc-section-title text-center mb-0">Our Past Recruiters</h2>
       </div>
-    </div>
-  </section>
 
+      <!-- logo-cloud -->
+      <div class="cpc-logo-cloud w-100 overflow-x-auto hide-scrollbar mt-5">
+        <div class="d-flex h-100 cpc-logo-track overflow-hidden">
+          <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
+            <a href="https://www.larsentoubro.com/" target="_blank">
+              <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
 
-  <footer id="footer"></footer>
-</body>
+            <a href="https://www.geminisolutions.com/" target="_blank">
+              <img
+                src="assets/logos/logos_gemini.png"
+                class="cpc-logo-cloud-img"
+                alt="Gemini Solutions"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
 
+            <a href="https://www.thermaxglobal.com/" target="_blank">
+              <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.adani.com/" target="_blank">
+              <img
+                src="assets/logos/logos_adani.png"
+                class="cpc-logo-cloud-img"
+                alt="Adani Enterprises"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.allstate.com" target="_blank">
+              <img
+                src="assets/logos/logos_allstate.png"
+                class="cpc-logo-cloud-img"
+                alt="Allstate"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.zaggle.in" target="_blank">
+              <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.dhoottransmission.com/" target="_blank">
+              <img
+                src="assets/logos/logos_dhoot.png"
+                class="cpc-logo-cloud-img"
+                alt="Dhoot Transmission"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.tcs.com" target="_blank">
+              <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.alohatechnology.com/" target="_blank">
+              <img
+                src="assets/logos/logos_aloha.png"
+                class="cpc-logo-cloud-img"
+                alt="Aloha Technology"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.mountblue.io/" target="_blank">
+              <img
+                src="assets/logos/logos_mountblue.png"
+                class="cpc-logo-cloud-img"
+                alt="MountBlue Technologies"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.revature.com" target="_blank">
+              <img
+                src="assets/logos/logos_revature.png"
+                class="cpc-logo-cloud-img"
+                alt="Revature"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.wipro.com" target="_blank">
+              <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.infosys.com" target="_blank">
+              <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://hcl.com/" target="_blank">
+              <img
+                src="assets/logos/logos_hcl.png"
+                class="cpc-logo-cloud-img"
+                alt="HCL Technologies"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.techmahindra.com" target="_blank">
+              <img
+                src="assets/logos/logos_techmahindra.png"
+                class="cpc-logo-cloud-img"
+                alt="Tech Mahindra"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+          </span>
+
+          <!-- Duplicated set of logos for seamless looping -->
+          <span class="d-flex animate-slide align-items-center flex-shrink-0 py-2">
+            <a href="https://www.larsentoubro.com/" target="_blank">
+              <img src="assets/logos/logos_lnt.png" class="cpc-logo-cloud-img" alt="L&T" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.geminisolutions.com/" target="_blank">
+              <img
+                src="assets/logos/logos_gemini.png"
+                class="cpc-logo-cloud-img"
+                alt="Gemini Solutions"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.thermaxglobal.com/" target="_blank">
+              <img src="assets/logos/logos_thermax.png" class="cpc-logo-cloud-img" alt="Thermax" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.adani.com/" target="_blank">
+              <img
+                src="assets/logos/logos_adani.png"
+                class="cpc-logo-cloud-img"
+                alt="Adani Enterprises"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.allstate.com" target="_blank">
+              <img
+                src="assets/logos/logos_allstate.png"
+                class="cpc-logo-cloud-img"
+                alt="Allstate"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.zaggle.in" target="_blank">
+              <img src="assets/logos/logos_zaggle.png" class="cpc-logo-cloud-img" alt="Zaggle" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.dhoottransmission.com/" target="_blank">
+              <img
+                src="assets/logos/logos_dhoot.png"
+                class="cpc-logo-cloud-img"
+                alt="Dhoot Transmission"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.tcs.com" target="_blank">
+              <img src="assets/logos/logos_tcs.png" class="cpc-logo-cloud-img" alt="TCS" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.alohatechnology.com/" target="_blank">
+              <img
+                src="assets/logos/logos_aloha.png"
+                class="cpc-logo-cloud-img"
+                alt="Aloha Technology"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.mountblue.io/" target="_blank">
+              <img
+                src="assets/logos/logos_mountblue.png"
+                class="cpc-logo-cloud-img"
+                alt="MountBlue Technologies"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.revature.com" target="_blank">
+              <img
+                src="assets/logos/logos_revature.png"
+                class="cpc-logo-cloud-img"
+                alt="Revature"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.wipro.com" target="_blank">
+              <img src="assets/logos/logos_wipro.png" class="cpc-logo-cloud-img" alt="Wipro" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.infosys.com" target="_blank">
+              <img src="assets/logos/logos_infosys.png" class="cpc-logo-cloud-img" alt="Infosys" />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://hcl.com/" target="_blank">
+              <img
+                src="assets/logos/logos_hcl.png"
+                class="cpc-logo-cloud-img"
+                alt="HCL Technologies"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+
+            <a href="https://www.techmahindra.com" target="_blank">
+              <img
+                src="assets/logos/logos_techmahindra.png"
+                class="cpc-logo-cloud-img"
+                alt="Tech Mahindra"
+              />
+            </a>
+            <img
+              src="assets/logos/logos_divider.png"
+              class="cpc-logo-cloud-divider"
+              alt="Divider"
+            />
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credits Badge -->
+    <a href="./credits.html" class="cpc-credits-badge" title="Site Credits">
+      <i class="fas fa-code me-1"></i> Credits
+    </a>
+
+    <footer id="footer"></footer>
+  </body>
 </html>

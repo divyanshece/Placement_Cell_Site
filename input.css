@@ -1353,6 +1353,27 @@ body::-webkit-scrollbar-thumb {
     text-decoration: underline;
 }
 
+.cpc-credits-badge {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    color: var(--bs-gray-400);
+    font-size: 0.7rem;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    z-index: 50;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    letter-spacing: 0.02em;
+}
+
+.cpc-credits-badge:hover {
+    color: var(--bs-gray-600);
+    opacity: 1;
+}
+
 .cpc-footer-social {
     width: 2.25rem;
     height: 2.25rem;
